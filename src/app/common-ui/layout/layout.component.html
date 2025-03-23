@@ -1,0 +1,12 @@
+<div class="menu-toggle" (click)="toggleSidebar()">
+    <div [class.active]="isSidebarOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
+<app-sidebar class="sidebar" [class.open]="isSidebarOpen"></app-sidebar>
+<div class="workspace">
+    <router-outlet></router-outlet>
+</div>

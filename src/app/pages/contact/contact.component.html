@@ -1,0 +1,29 @@
+<div class="content-container">
+    <div class="header">
+        <h1 class="headline">Follow Me</h1>
+    </div>
+    <h4 class="desc">Feel free to reach out to me through any of the methods below or follow contet im creating</h4>
+
+    <div class="contact-details">
+        @for (contact of contactMethods; track contact.label) {
+            <div class="contact-details__item" (click)="copyToClipboard(contact.value)" [class.copied]="copiedValue === contact.value">
+                <img [src]="'assets/imgs/' + contact.icon + '.svg'" class="contact-details__icon" alt="{{ contact.label }}">
+                <a *ngIf="contact.link" [href]="contact.link" target="_blank" class="contact-details__link">
+                    <strong>{{ contact.label }}:</strong> {{ contact.value }}
+                </a>
+                <p *ngIf="!contact.link"><strong>{{ contact.label }}:</strong> {{ contact.value }}</p>
+                <span class="tooltip">Copied!</span>
+            </div>
+        } @empty {
+            <p>No contact methods available.</p>
+        }
+        <div class="paypal-banner" (click)="openPaypal()">
+            <img src="assets/imgs/paypal.svg" alt="PayPal" class="paypal-logo">
+            <div class="paypal-text">
+                <h3>Support My Work</h3>
+                <p>Donate via PayPal</p>
+            </div>
+        </div>
+    </div>
+</div>
+

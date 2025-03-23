@@ -1,0 +1,64 @@
+    :host {
+        display: flex;
+        height: 100dvh;
+        transition: margin-left 0.3s ease-in-out;
+    }
+
+    .sidebar {
+        height: 100dvh;
+        position: fixed;
+        width: 350px;
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(-100%); 
+    }
+
+    .sidebar.open {
+        transform: translateX(0); 
+    }
+
+    .workspace {
+        flex: 1;
+        padding: 28px;
+        transition: margin-left 0.3s ease-in-out;
+    }
+
+    .menu-toggle {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .menu-toggle div {
+        width: 35px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .menu-toggle div span {
+        background: var(--primary-color);
+        height: 4px;
+        width: 100%;
+        transition: 0.3s;
+    }
+
+    .menu-toggle div.active span:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    .menu-toggle div.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle div.active span:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+
+    :host.open .workspace {
+        margin-left: 350px;
+    }

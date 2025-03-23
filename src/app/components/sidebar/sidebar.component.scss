@@ -1,0 +1,81 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20dvh 12px;
+    position: relative;
+    background: var(--dark-color);
+    color: var(--light-color);
+}
+
+.main-menu-list {
+    display: grid;
+    grid-gap: 8px;
+    list-style: none;
+    padding-bottom: 20px;
+}
+
+.menu-item {
+    padding: 30px 24px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: var(--light-color);
+    display: grid;
+    grid-template-columns: 16px 1fr max-content;
+    grid-gap: 12px;
+    font-weight: 700;
+    line-height: 24px;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    text-decoration: none;
+
+    .menu-item__icon {
+        width: 20px;
+        height: 20px;
+        filter: var(--icon-filter);
+    }
+    
+    &.active .menu-item__icon,
+    &:hover .menu-item__icon,
+    &:focus-visible .menu-item__icon {
+        filter: var(--icon-filter);
+    }
+
+    &.active,
+    &:hover,
+    &:focus-visible {
+        background: var(--dark-hover-color);
+        color: var(--primary-color);
+    }
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 8px;
+    transition: background 0.3s;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+
+    &:hover {
+        background: var(--dark-hover-color);
+    }
+}
+
+.theme-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: radial-gradient(circle, crimson 40%, black 60%);
+    transition: background 0.3s ease-in-out;
+
+    &.light {
+        background: radial-gradient(circle, #4169E1 40%, white 60%);
+    }
+}

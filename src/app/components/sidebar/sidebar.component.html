@@ -1,0 +1,14 @@
+<nav>
+    <ul class="main-menu-list">
+        <li *ngFor="let menuItem of menuItems">
+            <a [routerLink]="[menuItem.link]" routerLinkActive="active" class="menu-item">
+                <img [src]="'assets/imgs/' + menuItem.icon + '.svg'" class="menu-item__icon" alt="{{menuItem.label}}">
+                <span>{{menuItem.label}}</span>
+            </a>
+        </li>
+    </ul>
+    <div class="theme-toggle" (click)="toggleTheme()">
+        <div class="theme-circle" [class.light]="isLightTheme"></div>
+        <span>{{ isLightTheme ? 'Light Theme' : 'Dark Theme' }}</span>
+    </div>
+</nav>
