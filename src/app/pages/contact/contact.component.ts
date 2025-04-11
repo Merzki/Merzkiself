@@ -14,7 +14,8 @@ export class ContactComponent {
     { label: 'Email', value: 'merzkiii33@gmail.com', icon: 'mail', link: 'mailto:merzkiii33@gmail.com' },
     { label: 'Telegram', value: '@biwbawbow', icon: 'telegram', link: 'https://t.me/biwbawbow' },
     { label: 'Linkedin', value: 'Anton Shurmei', icon: 'linkedin', link: 'https://www.linkedin.com/in/anton-shurmei-63668b356/' },
-    { label: 'Dev', value: 'merzki', icon: 'dev', link: 'https://dev.to/merzki' }
+    { label: 'Dev', value: 'merzki', icon: 'dev', link: 'https://dev.to/merzki' },
+    { label: 'GitHub', value: 'Merzki', icon: 'github', link: 'https://github.com/Merzki' }
   ];
 
   copyToClipboard(value: string) {

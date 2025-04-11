@@ -1,0 +1,80 @@
+.projects-section {
+    width: 100%;
+    padding: 60px 80px;
+    background: var(--dark-color);
+    color: var(--light-color);
+    animation: fadeInUp 0.6s ease-in-out forwards;
+  }
+  
+  .section-title {
+    font-size: 36px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .section-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+    opacity: 0.9;
+    text-align: center;
+  }
+  
+  .project-block {
+    max-width: 1400px;
+    margin: 0 auto 100px auto;
+    text-align: left;
+  
+    h3 {
+      font-size: 32px;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+  
+    p {
+      font-size: 1.3rem;
+      line-height: 2;
+      opacity: 0.95;
+      margin-bottom: 30px;
+      color: var(--light-color);
+    }
+  
+    .project-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--primary-color);
+      transition: background 0.3s ease;
+      background-color: transparent;
+  
+      img {
+        width: 30px;
+        height: 30px;
+        filter: var(--icon-filter);
+      }
+  
+      span {
+        font-weight: 600;
+        font-size: 1.05rem;
+      }
+  
+      &:hover {
+        background-color: var(--dark-hover-color);
+      }
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

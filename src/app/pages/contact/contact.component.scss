@@ -115,10 +115,28 @@
 
 .paypal-logo {
     width: 50px;
-    height: auto;
+    height: 50px;
+    padding: 6px;
+    border-radius: 50%;
+    border: 2px solid;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     filter: var(--icon-filter);
-}
-
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+    background-color: var(--light-filter); 
+    border-color: rgba(255, 255, 255, 0.2);
+  
+    .light-theme & {
+      background-color: var(--dark-color);
+      border-color: rgba(0, 0, 0, 0.15);
+    }
+  
+    .paypal-banner:hover & {
+      transform: rotate(8deg) scale(1.1);
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    }
+  }  
+  
 .paypal-text {
     flex-grow: 1;
     margin-left: 15px;

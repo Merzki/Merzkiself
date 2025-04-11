@@ -1,0 +1,14 @@
+@for (section of sections; track section.title) {
+    <section class="it-section" [ngClass]="section.class">
+      <h2>{{ section.title }}</h2>
+      <p>{{ section.description }}</p>
+      <ul>
+        @for (item of section.items; track item.label) {
+          <li>
+            <span>{{ item.label }}:</span> {{ item.value }}
+          </li>
+        }
+      </ul>
+    </section>
+  }
+  
