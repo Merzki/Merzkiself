@@ -2,17 +2,15 @@
   <h2 class="section-title">Projects</h2>
   <p class="section-subtitle">Here you’ll find selected projects I’ve worked on</p>
 
-  <div class="project-block">
-    <h3>PaintAnalog (WPF)</h3>
-    <p>
-      A custom-built Paint analog made with WPF and MVVM.
-      Features include drawing tools, image & text manipulation, selection with confirmation, undo/redo, clipboard support,
-      transform handles (resizing, rotating), and a modular tool system. Built for responsive, precise user interaction
-    </p>
-    
-    <a class="project-banner" href="https://github.com/Merzki/PaintAnalog" target="_blank" rel="noopener noreferrer">
-      <img src="assets/imgs/github.svg" alt="GitHub" />
-      <span>View on GitHub</span>
-    </a>
-  </div>
+  @for (project of projects; track project.title) {
+    <div class="project-block">
+      <h3>{{ project.title }}</h3>
+      <p>{{ project.description }}</p>
+      
+      <a class="project-banner" [href]="project.link" target="_blank" rel="noopener noreferrer">
+        <img src="assets/imgs/github.svg" alt="GitHub" />
+        <span>View on GitHub</span>
+      </a>
+    </div>
+  }
 </section>
