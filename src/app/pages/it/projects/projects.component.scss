@@ -1,28 +1,6 @@
-.projects-section {
-    width: 100%;
-    padding: 60px 80px;
-    background: var(--dark-color);
-    color: var(--light-color);
-    animation: fadeInUp 0.6s ease-in-out forwards;
-  }
-  
-  .section-title {
-    font-size: 36px;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
-  .section-subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 60px;
-    opacity: 0.9;
-    text-align: center;
-  }
-  
   .project-block {
     max-width: 1400px;
-    margin: 0 auto 100px auto;
+    margin: 0 auto 0 auto;
     text-align: left;
   
     h3 {
@@ -66,15 +44,3 @@
       }
     }
   }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  

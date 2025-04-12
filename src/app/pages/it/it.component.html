@@ -4,9 +4,9 @@
     <p class="it-subtitle">Building well-designed, scalable, and beautiful applications</p>
 
     <nav class="it-nav">
-      <a routerLink="skillset" routerLinkActive="active-link">Skillset</a>
-      <a routerLink="projects" routerLinkActive="active-link">Projects</a>
-    </nav>
+      <a [routerLink]="'skillset'" [ngClass]="getLinkClass('skillset')">Skillset</a>
+      <a [routerLink]="'projects'" [ngClass]="getLinkClass('projects')">Projects</a>
+    </nav>    
 
     <router-outlet></router-outlet>
   </div>

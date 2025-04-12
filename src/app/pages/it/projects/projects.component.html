@@ -1,8 +1,5 @@
-<section class="projects-section">
-  <h2 class="section-title">Projects</h2>
-  <p class="section-subtitle">Here you’ll find selected projects I’ve worked on</p>
-
-  @for (project of projects; track project.title) {
+@for (project of projects; track project.title) {
+  <section class="it-section">
     <div class="project-block">
       <h3>{{ project.title }}</h3>
       <p>{{ project.description }}</p>
@@ -12,5 +9,5 @@
         <span>View on GitHub</span>
       </a>
     </div>
-  }
-</section>
+  </section>
+}

@@ -32,16 +32,30 @@
       text-decoration: none;
       font-weight: bold;
       position: relative;
+      padding-bottom: 4px;
+  
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: var(--primary-color);
+        transform: scaleX(0);
+        transition: transform 0.6s ease;
+      }
+  
+      &.from-left::after {
+        transform-origin: left;
+      }
+  
+      &.from-right::after {
+        transform-origin: right;
+      }
   
       &.active-link::after {
-        content: '';
-        display: block;
-        height: 2px;
-        background-color: var(--primary-color);
-        position: absolute;
-        bottom: -4px;
-        left: 0;
-        right: 0;
+        transform: scaleX(1);
       }
     }
   }
