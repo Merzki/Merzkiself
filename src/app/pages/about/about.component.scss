@@ -1,69 +1,114 @@
 .about_title {
-    font-size: 80px;
-    font-weight: bold;
-    text-align: center;
-    color: var(--primary-color);
-    background: linear-gradient(90deg, var(--primary-color), var(--dark-primary-color));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 60px;
+  font-size: 80px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--primary-color);
+  background: linear-gradient(90deg, var(--primary-color), var(--dark-primary-color));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 20px 0;
+  position: relative;
+  z-index: 5;
+  animation: fadeInUp 0.8s ease-out both;
 }
 
 .about_wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 100px;
-    width: 100%;
-    margin: auto;
-    padding: 20px;
-}
-
-.about_wrap div {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 300px);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
 }
 
 .about_section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    animation: fadeInUp 0.6s ease-in-out forwards;
-    
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex: 1;
+  padding: 20px;
+  margin-top: -30px;
+  min-height: 500px; 
+  animation: fadeInUp 0.8s ease-out both;
 }
 
 .about_img {
-    width: 450px;
-    height: 450px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: var(--box-shadow);
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
+  flex-shrink: 0; 
+  align-self: center; 
+  animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
 .about_text {
-    font-size: 24px;
-    line-height: 1.8;
-    max-width: 700px;
-    color: var(--light-color);  
-    opacity: 0.9;
+  font-size: 24px;
+  line-height: 1.8;
+  width: 600px; 
+  min-height: 300px; 
+  color: var(--light-color);
+  opacity: 0.9;
+  display: flex;
+  align-items: center; 
+  padding: 20px;
+  box-sizing: border-box;
+  animation: fadeInUp 0.8s ease-out 0.3s both;
 }
 
-.extra_text{
-    font-size: 24px;
-    line-height: 1.8;
-    max-width: 1200px;
-    color: var(--light-color);  
-    opacity: 0.9;
+.progress_container {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  position: fixed;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  padding: 12px 0;
+  z-index: 10;
+  animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+.progress_bar {
+  width: 80px; 
+  height: 6px; 
+  background-color: rgba(255, 255, 255, 0.3); 
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.progress_fill {
+  width: 0%;
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 3px;
+  transition: width 0.1s linear;
+}
+
+.progress_fill.active {
+  animation: fillBar linear forwards;
+}
+
+@keyframes fillBar {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
