@@ -1,10 +1,14 @@
-.icon{
+.icon {
+    width: clamp(200px, 70vw, 500px);
+    height: auto;
     border-radius: 50%;
     margin-bottom: 25px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
 }
 
 .title {
-    font-size: 40px;
+    font-size: 2.5rem; 
     font-weight: bold;
     margin-bottom: 10px;
     color: var(--light-color);
@@ -18,6 +22,7 @@
     font-size: 1.2rem;
     opacity: 0.8;
     margin-bottom: 20px;
+    line-height: 1.5;
 }
 
 .cta-button {
@@ -26,11 +31,53 @@
     text-decoration: none;
     border-radius: 8px;
     padding: 12px 24px;
-    transition: filter 0.3s ease-in-out;
     font-weight: bold;
+    display: inline-block;
+    transition: filter 0.3s ease-in-out;
 
     &:hover {
         filter: brightness(90%);
         background: var(--dark-primary-color);
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+
+    .icon {
+        width: 260px; 
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 0.95rem; 
+    }
+
+    .cta-button {
+        width: 100%;
+        padding: 12px; 
+        font-size: 1rem;
+    }
+
+    .icon {
+        width: 160px; 
+        margin-bottom: 15px;
     }
 }

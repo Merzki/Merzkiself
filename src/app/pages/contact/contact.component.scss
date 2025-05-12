@@ -169,5 +169,103 @@
         transform: scale(1.1);
     }
 }
+@media (max-width: 992px) {
+  .content-container {
+    width: 80%;
+    padding: 30px 20px;
+  }
+
+  .headline {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    text-align: center;
+  }
+
+  .desc {
+    font-size: clamp(0.6rem, 4.5vw, 0.9rem);
+  }
+
+  .paypal-banner {
+    flex-direction: block;
+    align-items: center;
+    text-align: center;
+    padding: 12px 15px;
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .paypal-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .paypal-text h3 {
+    font-size: 1.1rem;
+  }
+
+  .paypal-text p {
+    font-size: 0.85rem;
+  }
+
+  .paypal-button {
+    font-size: 0.95rem;
+    padding: 8px 12px;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .content-container {
+    width: 95%;
+    padding: 20px 16px;
+    border-radius: 10px;
+  }
+
+  .headline {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .desc {
+    font-size: clamp(0.4rem, 4vw, 0.8rem);
+  }
+
+  .contact-details {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .contact-details__item {
+    flex-direction: block;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .paypal-banner {
+    padding: 10px 12px;
+    border-radius: 8px;
+    max-width: 100%;
+    font-size: 0.9rem;
+    gap: 8px;
+  }
+
+  .paypal-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .paypal-text h3 {
+    font-size: 1rem;
+  }
+
+  .paypal-text p {
+    font-size: 0.75rem;
+  }
+
+  .paypal-button {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 8px;
+    margin-top: 8px;
+  }
+}
 
 

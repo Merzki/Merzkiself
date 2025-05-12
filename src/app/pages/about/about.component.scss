@@ -1,5 +1,5 @@
 .about_title {
-  font-size: 80px;
+  font-size: clamp(2rem, 5vw, 5rem);
   font-weight: bold;
   text-align: center;
   color: var(--primary-color);
@@ -7,7 +7,7 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin: 20px 0;
+  margin: 2vh 0;
   position: relative;
   z-index: 5;
   animation: fadeInUp 0.8s ease-out both;
@@ -16,11 +16,12 @@
 .about_wrap {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 300px);
+  height: auto;
   width: 100%;
   max-width: 1200px;
+  max-width: 90vw;
   margin: 0 auto;
-  padding: 20px;
+  padding: 2rem;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
@@ -28,61 +29,64 @@
 
 .about_section {
   display: flex;
+  flex-direction: row; 
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 3rem;
   flex: 1;
-  padding: 20px;
-  margin-top: -30px;
-  min-height: 500px; 
+  padding: 2rem;
+  margin-top: 0;
+  min-height: 60vh;
   animation: fadeInUp 0.8s ease-out both;
 }
 
 .about_img {
-  width: 500px;
-  height: 500px;
+  width: clamp(200px, 30vw, 400px);
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 50%;
+  max-width: 500px;
   box-shadow: var(--box-shadow);
-  flex-shrink: 0; 
-  align-self: center; 
+  flex-shrink: 0;
+  align-self: center;
   animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
 .about_text {
-  font-size: 24px;
+  font-size: clamp(1rem, 2vw, 1.5rem);
   line-height: 1.8;
-  width: 600px; 
-  min-height: 300px; 
+  width: 100%;
+  min-height: 200px;
   color: var(--light-color);
   opacity: 0.9;
   display: flex;
-  align-items: center; 
-  padding: 20px;
+  flex: 2;
+  align-items: center;
+  padding: 1.5rem;
   box-sizing: border-box;
   animation: fadeInUp 0.8s ease-out 0.3s both;
 }
 
 .progress_container {
   display: flex;
-  gap: 8px;
+  gap: 0.5rem;
   justify-content: center;
   position: fixed;
-  bottom: 30px;
+  bottom: 2rem;
   left: 0;
   right: 0;
-  padding: 12px 0;
+  padding: 0.75rem 0;
   z-index: 10;
   animation: fadeInUp 0.8s ease-out 0.5s both;
 }
 
 .progress_bar {
-  width: 80px; 
-  height: 6px; 
-  background-color: rgba(255, 255, 255, 0.3); 
+  width: clamp(40px, 6vw, 80px);
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 3px;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .progress_fill {
@@ -98,8 +102,12 @@
 }
 
 @keyframes fillBar {
-  from { width: 0%; }
-  to { width: 100%; }
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes fadeInUp {
@@ -110,5 +118,51 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .about_section {
+    gap: 2rem;
+    flex-direction: column;
+  }
+
+  .about_img {
+    width: clamp(220px, 50vw, 400px);
+  }
+
+  .about_text {
+    text-align: center;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about_wrap {
+    padding: 1rem;
+  }
+
+  .about_text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .progress_bar {
+    width: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about_title {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+
+  .about_img {
+    width: 60vw;
+  }
+
+  .about_text {
+    padding: 0.75rem;
   }
 }
