@@ -6,8 +6,10 @@
     <nav class="it-nav">
       <a [routerLink]="'skillset'" [ngClass]="getLinkClass('skillset')">Skillset</a>
       <a [routerLink]="'projects'" [ngClass]="getLinkClass('projects')">Projects</a>
-    </nav>    
+    </nav>
 
-    <router-outlet></router-outlet>
+    <div class="outlet-wrapper">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>

@@ -1,46 +1,46 @@
-  .project-block {
-    max-width: 1400px;
-    margin: 0 auto 0 auto;
-    text-align: left;
-  
-    h3 {
-      font-size: 32px;
-      color: var(--primary-color);
-      margin-bottom: 20px;
+.project-block {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: left;
+
+  h3 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem); 
+    color: var(--primary-color);
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: clamp(1rem, 2vw, 1.3rem); 
+    line-height: 1.8;
+    opacity: 0.95;
+    margin-bottom: 30px;
+    color: var(--light-color);
+  }
+
+  .project-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: background 0.3s ease;
+    background-color: transparent;
+
+    img {
+      width: 30px;
+      height: 30px;
+      filter: var(--icon-filter);
     }
-  
-    p {
-      font-size: 1.3rem;
-      line-height: 2;
-      opacity: 0.95;
-      margin-bottom: 30px;
-      color: var(--light-color);
+
+    span {
+      font-weight: 600;
+      font-size: clamp(0.95rem, 1.5vw, 1.05rem); 
     }
-  
-    .project-banner {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 24px;
-      border-radius: 12px;
-      text-decoration: none;
-      color: var(--primary-color);
-      transition: background 0.3s ease;
-      background-color: transparent;
-  
-      img {
-        width: 30px;
-        height: 30px;
-        filter: var(--icon-filter);
-      }
-  
-      span {
-        font-weight: 600;
-        font-size: 1.05rem;
-      }
-  
-      &:hover {
-        background-color: var(--dark-hover-color);
-      }
+
+    &:hover {
+      background-color: var(--dark-hover-color);
     }
   }
+}
