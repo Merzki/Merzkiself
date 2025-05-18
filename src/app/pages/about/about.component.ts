@@ -1,30 +1,31 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
-  imports: [NgFor],
+  imports: [NgFor, NgIf],
   animations: [
-    trigger('fadeSlide', [
-      state('visible', style({
-        opacity: 1,
-        transform: 'translateY(0)'
-      })),
-      state('hidden', style({
-        opacity: 0,
-        transform: 'translateY(30px)'
-      })),
-      transition('hidden => visible', [
-        animate('600ms ease-in-out')
-      ]),
-      transition('visible => hidden', [
-        animate('200ms ease-out')
-      ])
+  trigger('slideAnimation', [
+    state('enter', style({
+      opacity: 1,
+      transform: 'translateX(0%)'
+    })),
+    state('leave', style({
+      opacity: 0,
+      transform: 'translateX(100%)'
+    })),
+    transition('leave => enter', [
+      animate('800ms ease')
+    ]),
+    transition('enter => leave', [
+      animate('600ms ease-in')
     ])
-  ]
+  ])
+]
+
 })
 export class AboutComponent implements OnInit, OnDestroy {
   slides = [
@@ -41,16 +42,12 @@ export class AboutComponent implements OnInit, OnDestroy {
       text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
     }
   ];
-
   currentSlide = 0;
-  slideDuration = 4000; 
+  animationState: 'enter' | 'leave' = 'enter';
+  slideDuration = 4000;
   intervalId: any;
-  animationState: 'visible' | 'hidden' = 'hidden';
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.animationState = 'visible';
-    });
     this.startSlideshow();
   }
 
@@ -59,17 +56,13 @@ export class AboutComponent implements OnInit, OnDestroy {
   }
 
   startSlideshow(): void {
-    if (this.intervalId) {
-      clearInterval(this.intervalId);
-    }
-  
     this.intervalId = setInterval(() => {
-      this.animationState = 'hidden';
+      this.animationState = 'leave';
 
       setTimeout(() => {
         this.currentSlide = (this.currentSlide + 1) % this.slides.length;
-        this.animationState = 'visible';
-      }, 200); 
+        this.animationState = 'enter';
+      }, 600); 
     }, this.slideDuration);
   }
 }
