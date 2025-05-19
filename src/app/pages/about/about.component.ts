@@ -8,24 +8,23 @@ import { NgFor, NgIf } from '@angular/common';
   styleUrls: ['./about.component.scss'],
   imports: [NgFor, NgIf],
   animations: [
-  trigger('slideAnimation', [
-    state('enter', style({
-      opacity: 1,
-      transform: 'translateX(0%)'
-    })),
-    state('leave', style({
-      opacity: 0,
-      transform: 'translateX(100%)'
-    })),
-    transition('leave => enter', [
-      animate('800ms ease')
-    ]),
-    transition('enter => leave', [
-      animate('600ms ease-in')
+    trigger('slideAnimation', [
+      state('enter', style({
+        opacity: 1,
+        transform: 'translateX(0)'
+      })),
+      state('leave', style({
+        opacity: 0,
+        transform: 'translateX(10%)'
+      })),
+      transition('leave => enter', [
+        animate('500ms cubic-bezier(0.4, 0.0, 0.2, 1)')
+      ]),
+      transition('enter => leave', [
+        animate('500ms cubic-bezier(0.4, 0.0, 0.2, 1)')
+      ])
     ])
-  ])
-]
-
+  ]
 })
 export class AboutComponent implements OnInit, OnDestroy {
   slides = [
@@ -62,7 +61,7 @@ export class AboutComponent implements OnInit, OnDestroy {
       setTimeout(() => {
         this.currentSlide = (this.currentSlide + 1) % this.slides.length;
         this.animationState = 'enter';
-      }, 600); 
+      }, 500); 
     }, this.slideDuration);
   }
 }
