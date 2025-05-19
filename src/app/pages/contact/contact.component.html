@@ -2,28 +2,39 @@
     <div class="header">
         <h1 class="headline">Follow Me</h1>
     </div>
-    <h4 class="desc">Feel free to reach out to me through any of the methods below or follow contet im creating</h4>
+    <h4 class="desc">Feel free to reach out to me through any of the methods below or follow content I'm creating</h4>
 
-    <div class="contact-details">
-        @for (contact of contactMethods; track contact.label) {
-            <div class="contact-details__item" (click)="copyToClipboard(contact.value)" [class.copied]="copiedValue === contact.value">
-                <img [src]="'assets/imgs/' + contact.icon + '.svg'" class="contact-details__icon" alt="{{ contact.label }}">
-                <a *ngIf="contact.link" [href]="contact.link" target="_blank" class="contact-details__link">
-                    <strong>{{ contact.label }}:</strong> {{ contact.value }}
-                </a>
-                <p *ngIf="!contact.link"><strong>{{ contact.label }}:</strong> {{ contact.value }}</p>
-                <span class="tooltip">Copied!</span>
-            </div>
-        } @empty {
-            <p>No contact methods available.</p>
-        }
-        <div class="paypal-banner" (click)="openPaypal()">
-            <img src="assets/imgs/paypal.svg" alt="PayPal" class="paypal-logo">
-            <div class="paypal-text">
-                <h3>Support My Work</h3>
-                <p>Donate via PayPal</p>
-            </div>
-        </div>
+    <div class="social-grid">
+        <a [href]="contactMethods[0].link" target="_blank" class="social-card email size-large" style="grid-area: email;">
+            <img [src]="'assets/imgs/' + contactMethods[0].icon + '.svg'" class="social-icon" alt="Email">
+            <span class="social-label">{{ contactMethods[0].label }}</span>
+            <span class="social-value">{{ contactMethods[0].value }}</span>
+        </a>
+        <a [href]="contactMethods[1].link" target="_blank" class="social-card telegram" style="grid-area: telegram;">
+            <img [src]="'assets/imgs/' + contactMethods[1].icon + '.svg'" class="social-icon" alt="Telegram">
+            <span class="social-label">{{ contactMethods[1].label }}</span>
+            <span class="social-value">{{ contactMethods[1].value }}</span>
+        </a>
+        <a [href]="contactMethods[2].link" target="_blank" class="social-card linkedin" style="grid-area: linkedin;">
+            <img [src]="'assets/imgs/' + contactMethods[2].icon + '.svg'" class="social-icon" alt="Linkedin">
+            <span class="social-label">{{ contactMethods[2].label }}</span>
+            <span class="social-value">{{ contactMethods[2].value }}</span>
+        </a>
+        <a [href]="contactMethods[3].link" target="_blank" class="social-card dev" style="grid-area: dev;">
+            <img [src]="'assets/imgs/' + contactMethods[3].icon + '.svg'" class="social-icon" alt="Dev">
+            <span class="social-label">{{ contactMethods[3].label }}</span>
+            <span class="social-value">{{ contactMethods[3].value }}</span>
+        </a>
+        <a [href]="contactMethods[4].link" target="_blank" class="social-card github size-large" style="grid-area: github;">
+            <img [src]="'assets/imgs/' + contactMethods[4].icon + '.svg'" class="social-icon" alt="GitHub">
+            <span class="social-label">{{ contactMethods[4].label }}</span>
+            <span class="social-value">{{ contactMethods[4].value }}</span>
+        </a>
+        <a (click)="openPaypal()" class="social-card paypal size-vertical" style="grid-area: paypal;">
+            <img src="assets/imgs/paypal.svg" alt="PayPal" class="social-icon">
+            <span class="social-label">Support My Work</span>
+            <span class="social-value">Donate via PayPal</span>
+        </a>
     </div>
 </div>
 

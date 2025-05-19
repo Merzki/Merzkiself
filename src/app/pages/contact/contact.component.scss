@@ -4,11 +4,11 @@
     align-items: center;
     justify-content: center;
     padding: 40px;
-    text-align: left;
+    text-align: center;
     background: var(--dark-color);
     color: var(--light-color);
     border-radius: 2%;
-    width: 50%;
+    width: 80%;
     margin: auto;
     min-height: 50vh;
     color: var(--primary-color);
@@ -21,70 +21,118 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
 }
 
-.contact-details {
-    margin-top: 20px;
-    font-size: 1.1rem;
-    animation: fadeInUp 0.6s ease-in-out forwards;
-    
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
+.desc {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+    max-width: 600px;
 }
 
-.contact-details__item {
+.social-grid {
+    display: grid;
+    grid-template-areas:
+        "email email telegram"
+        "linkedin dev telegram"
+        "github github paypal";
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-auto-rows: 180px;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 2rem;
+}
+
+.social-card {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 12px;
-    padding: 8px 0;
-    cursor: pointer;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    transition: transform 0.2s ease-in-out;
+    overflow: hidden;
+    min-height: 150px;
+    cursor: pointer;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+        z-index: 1;
+    }
 
     &:hover {
-        transform: scale(1.02);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     }
 
-    &:hover .contact-details__icon {
-        transform: scale(1.1);
+    .social-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 1rem;
+        filter: brightness(0) invert(1);
+        z-index: 2;
     }
-}
 
-.contact-details__icon {
-    width: 24px;
-    height: 24px;
-    filter: var(--icon-filter);
-    transition: transform 0.2s ease-in-out;
-}
+    .social-label {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        z-index: 2;
+    }
 
-.contact-details__link {
-    text-decoration: none;
-    color: var(--primary-color);
-}
+    .social-value {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        z-index: 2;
+    }
 
-.tooltip {
-    position: absolute;
-    top: -25px;
-    right: 10px;
-    background: var(--primary-color);
-    color: var(--light-color);
-    padding: 5px 8px;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
+    &.size-large {
+        min-height: 180px;
+    }
 
-.contact-details__item.copied .tooltip {
-    opacity: 1;
+    &.size-vertical {
+        min-height: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &.email {
+        background: linear-gradient(135deg, #EA4335, #B22234);
+    }
+
+    &.telegram {
+        background: linear-gradient(135deg, #0088cc, #005580);
+    }
+
+    &.linkedin {
+        background: linear-gradient(135deg, #0077B5, #004471);
+    }
+
+    &.dev {
+        background: linear-gradient(135deg, #0A0A0A, #333333);
+    }
+
+    &.github {
+        background: linear-gradient(135deg, #333333, #000000);
+    }
+
+    &.paypal {
+        background: linear-gradient(135deg, #003087, #009cde);
+    }
 }
 
 .paypal-banner {
@@ -118,24 +166,14 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     filter: var(--icon-filter);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
-    background-color: var(--light-filter); 
+    background-color: var(--light-filter);
     border-color: rgba(255, 255, 255, 0.2);
-  
-    .light-theme & {
-      background-color: var(--dark-color);
-      border-color: rgba(0, 0, 0, 0.15);
-    }
-  
-    .paypal-banner:hover & {
-      transform: rotate(8deg) scale(1.1);
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
-    }
-  }  
-  
+}
+
 .paypal-text {
     flex-grow: 1;
     margin-left: 15px;
+    text-align: left;
 
     h3 {
         margin: 0;
@@ -149,119 +187,111 @@
     }
 }
 
-.paypal-button {
-    background: var(--light-color);
-    color: var(--primary-color);
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: bold;
-    transition: background 0.3s, transform 0.2s;
-
-    &:hover {
-        background: var(--primary-color);
-        color: var(--light-color);
-        transform: scale(1.1);
-    }
-}
 @media (max-width: 992px) {
-  .content-container {
-    width: 80%;
-    padding: 30px 20px;
-  }
+    .content-container {
+        width: 90%;
+        padding: 30px 20px;
+    }
 
-  .headline {
-    font-size: clamp(2.5rem, 8vw, 4rem);
-    text-align: center;
-  }
+    .headline {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+    }
 
-  .desc {
-    font-size: clamp(0.6rem, 4.5vw, 0.9rem);
-  }
+    .desc {
+        font-size: clamp(0.9rem, 4vw, 1.1rem);
+    }
 
-  .paypal-banner {
-    flex-direction: block;
-    align-items: center;
-    text-align: center;
-    padding: 12px 15px;
-    max-width: 100%;
-    font-size: 0.95rem;
-  }
+    .social-grid {
+        grid-template-areas:
+            "email email"
+            "telegram linkedin"
+            "dev github"
+            "paypal paypal";
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 160px;
+        gap: 1rem;
+    }
 
-  .paypal-logo {
-    width: 40px;
-    height: 40px;
-  }
+    .social-card {
+        padding: 1.5rem;
+        min-height: 160px;
 
-  .paypal-text h3 {
-    font-size: 1.1rem;
-  }
+        &.size-large,
+        &.size-vertical {
+            min-height: 160px;
+            aspect-ratio: unset;
+        }
 
-  .paypal-text p {
-    font-size: 0.85rem;
-  }
+        .social-icon {
+            width: 40px;
+            height: 40px;
+        }
 
-  .paypal-button {
-    font-size: 0.95rem;
-    padding: 8px 12px;
-    margin-top: 12px;
-  }
+        .social-label {
+            font-size: 1.1rem;
+        }
+
+        .social-value {
+            font-size: 0.8rem;
+        }
+    }
 }
 
 @media (max-width: 576px) {
-  .content-container {
-    width: 95%;
-    padding: 20px 16px;
-    border-radius: 10px;
-  }
+    .content-container {
+        width: 95%;
+        padding: 20px 15px;
+    }
 
-  .headline {
-    font-size: clamp(2rem, 10vw, 3rem);
-  }
+    .headline {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
 
-  .desc {
-    font-size: clamp(0.4rem, 4vw, 0.8rem);
-  }
+    .desc {
+        font-size: 0.9rem;
+    }
 
-  .contact-details {
-    font-size: 0.95rem;
-    text-align: center;
-  }
+    .social-grid {
+        grid-template-areas:
+            "email"
+            "telegram"
+            "linkedin"
+            "dev"
+            "github"
+            "paypal";
+        grid-template-columns: 1fr;
+        grid-auto-rows: 140px;
+        gap: 1rem;
+    }
 
-  .contact-details__item {
-    flex-direction: block;
-    align-items: center;
-    gap: 6px;
-  }
+    .social-card {
+        padding: 1.2rem;
+        min-height: 140px;
 
-  .paypal-banner {
-    padding: 10px 12px;
-    border-radius: 8px;
-    max-width: 100%;
-    font-size: 0.9rem;
-    gap: 8px;
-  }
+        &.size-large,
+        &.size-vertical {
+            min-height: 140px;
+            aspect-ratio: unset;
+        }
 
-  .paypal-logo {
-    width: 48px;
-    height: 48px;
-  }
+        .social-icon {
+            width: 36px;
+            height: 36px;
+        }
 
-  .paypal-text h3 {
-    font-size: 1rem;
-  }
+        .social-label {
+            font-size: 1rem;
+        }
 
-  .paypal-text p {
-    font-size: 0.75rem;
-  }
+        .social-value {
+            font-size: 0.75rem;
+        }
+    }
 
-  .paypal-button {
-    width: 100%;
-    font-size: 0.9rem;
-    padding: 8px;
-    margin-top: 8px;
-  }
+    .paypal-banner {
+        padding: 12px 15px;
+        max-width: 100%;
+    }
 }
 
 
