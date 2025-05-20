@@ -1,3 +1,5 @@
+@use 'app/common-ui/mixins' as *;
+
 :root{
     --dark-color: #0D0D0D;      
     --light-color: #F5F5F5;      
@@ -25,18 +27,10 @@ body{
 }
 
 .content-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-    text-align: center;
-    background: var(--dark-color); 
-    color: var(--light-color);
-    border-radius: 16px;
     max-width: 1000px;
     margin: 0 auto;
-    box-sizing: border-box;
+    text-align: center;
+    @include responsive-padding;
 }
 
 @media (max-width: 768px) {
@@ -54,20 +48,16 @@ body{
 }
 
 .it-section {
+  @include card-style;
+  @include flex-column;
   width: 100%;
   text-align: left;
-  padding: 30px 20px;
-  border-radius: 12px;
-  background: var(--dark-color);
-  box-shadow: var(--box-shadow);
   margin-bottom: 20px;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s ease-in-out forwards;
+  @extend .fade-in;
 
   h2 {
     font-size: 28px;
-    color: var(--primary-color);
+    @extend .text-primary;
     margin-bottom: 12px;
   }
 
@@ -84,31 +74,19 @@ body{
     li {
       font-size: 1.1rem;
       padding: 6px 0;
-      display: flex;
-      align-items: center;
+      @include flex-left;
 
       span {
         font-weight: bold;
-        color: var(--primary-color);
+        @extend .text-primary;
         margin-right: 4px;
       }
     }
 
     li::before {
-      color: var(--primary-color);
+      @extend .text-primary;
       font-size: 1.2rem;
       margin-right: 10px;
-    }
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
     }
   }
 }

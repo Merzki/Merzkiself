@@ -1,0 +1,75 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-left {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin hover-effect {
+  transition: background-color 0.3s ease;
+  &:hover {
+    background: var(--dark-hover-color);
+  }
+}
+
+@mixin card-style {
+  background: var(--dark-color);
+  box-shadow: var(--box-shadow);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+@mixin responsive-padding {
+  padding: 40px;
+  @media (max-width: 768px) {
+    padding: 30px 20px;
+  }
+  @media (max-width: 480px) {
+    padding: 20px 15px;
+  }
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-light {
+  color: var(--light-color);
+}
+
+.bg-dark {
+  background-color: var(--dark-color);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 

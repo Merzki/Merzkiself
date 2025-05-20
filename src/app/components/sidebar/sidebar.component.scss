@@ -1,11 +1,12 @@
+@use '../../common-ui/mixins' as *;
+
 :host {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     justify-content: space-between;
     padding: 20dvh 12px;
     position: relative;
-    background: var(--dark-color);
-    color: var(--light-color);
+    @extend .bg-dark;
+    @extend .text-light;
 }
 
 .main-menu-list {
@@ -20,7 +21,7 @@
     cursor: pointer;
     border: none;
     background: none;
-    color: var(--light-color);
+    @extend .text-light;
     display: grid;
     grid-template-columns: 16px 1fr max-content;
     grid-gap: 12px;
@@ -46,14 +47,13 @@
     &.active,
     &:hover,
     &:focus-visible {
-        background: var(--dark-hover-color);
-        color: var(--primary-color);
+        @include hover-effect;
+        @extend .text-primary;
     }
 }
 
 .theme-toggle {
-    display: flex;
-    align-items: center;
+    @include flex-center;
     gap: 10px;
     cursor: pointer;
     padding: 12px;
@@ -62,10 +62,7 @@
     position: absolute;
     bottom: 20px;
     left: 20px;
-
-    &:hover {
-        background: var(--dark-hover-color);
-    }
+    @include hover-effect;
 }
 
 .theme-circle {
