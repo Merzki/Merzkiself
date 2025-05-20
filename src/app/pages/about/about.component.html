@@ -3,20 +3,23 @@
 
   <div class="about_wrap">
     <div class="about_slider-container">
-      <ng-container *ngFor="let slide of slides; let i = index">
-        <div 
-          class="about_section"
-          *ngIf="i === currentSlide"
-          [@slideAnimation]="animationState"
-        >
-          <img [src]="slide.image" alt="Slide image" class="about_img" />
-          <p class="about_text">{{ slide.text }}</p>
-        </div>
-      </ng-container>
+      @for (slide of slides; let i = $index; track i) {
+        @if (i === currentSlide) {
+          <div 
+            class="about_section"
+            [@slideAnimation]="animationState"
+          >
+            <img [src]="slide.image" alt="Slide image" class="about_img" />
+            <p class="about_text">{{ slide.text }}</p>
+          </div>
+        }
+      } @empty {
+        <p>No slides available</p>
+      }
     </div>
 
     <div class="progress_container">
-      <ng-container *ngFor="let slide of slides; let i = index">
+      @for (slide of slides; let i = $index; track i) {
         <div class="progress_bar">
           <div 
             class="progress_fill" 
@@ -24,7 +27,9 @@
             [style.animationDuration.ms]="slideDuration"
           ></div>
         </div>
-      </ng-container>
+      } @empty {
+        <p>No progress bars</p>
+      }
     </div>
   </div>
 </div>

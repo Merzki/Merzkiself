@@ -1,12 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
-  imports: [NgFor, NgIf],
   animations: [
     trigger('slideAnimation', [
       state('enter', style({
