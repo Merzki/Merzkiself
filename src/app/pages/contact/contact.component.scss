@@ -22,6 +22,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 1rem;
+    animation: fadeInUp 0.8s ease-out both;
 }
 
 .desc {
@@ -29,20 +30,22 @@
     opacity: 0.8;
     margin-bottom: 2rem;
     max-width: 600px;
+    animation: fadeInUp 0.8s ease-out both;
 }
 
 .social-grid {
     display: grid;
     grid-template-areas:
-        "email email telegram"
-        "linkedin dev telegram"
-        "github github paypal";
+        "linkedin linkedin github"
+        "telegram paypal github"
+        "email email dev";
     grid-template-columns: 2fr 1fr 1fr;
     grid-auto-rows: 180px;
     gap: 1.5rem;
     width: 100%;
     max-width: 1200px;
     margin-bottom: 2rem;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
 .social-card {
