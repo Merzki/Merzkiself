@@ -28,15 +28,15 @@ export class AboutComponent implements OnInit, OnDestroy {
   slides = [
     {
       image: 'assets/imgs/me1.jpg',
-      text: "Hi, I'm Anton, an 18-year-old programming enthusiast..."
+      text: "Hi, I'm Anton - an 18 y.o self-taught developer passionate about building smart, user-friendly apps. I'm currently studying to become a software developer in Poznań, Poland"
     },
     {
-      image: 'assets/imgs/me1.jpg',
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      image: 'assets/imgs/me2.jpg',
+      text: "Right now, I'm deepening my frontend skills - exploring advanced concepts in Angular and improving my styling workflow with Sass to write more maintainable and scalable CSS"
     },
     {
-      image: 'assets/imgs/me1.jpg',
-      text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+      image: 'assets/imgs/me3.jpg',
+      text: "I'm currently open to all collaboration opportunities and actively looking for a frontend development position anywhere in Europe. Feel free to reach out!"
     }
   ];
   currentSlide = 0;
