@@ -1,10 +1,11 @@
 import { Component, HostBinding } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SidebarComponent } from '../../components/sidebar/sidebar.component';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-layout',
-  imports: [RouterOutlet, SidebarComponent],
+  imports: [RouterOutlet, SidebarComponent, NgFor],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss'
 })
@@ -18,4 +19,11 @@ export class LayoutComponent {
   toggleSidebar() {
     this.isSidebarOpen = !this.isSidebarOpen;
   }
+
+  xviiArray = Array.from({ length: 20 }, () => ({
+    delay: Math.random() * 2000,
+    duration: 4000 + Math.random() * 4000, 
+    startLeft: Math.random() * 100,
+    startTop: Math.random() * 100
+  }));
 }
