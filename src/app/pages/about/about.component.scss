@@ -11,6 +11,7 @@
   position: relative;
   z-index: 5;
   animation: fadeInUp 0.8s ease-out both;
+  text-shadow: var(--text-shadow);
 }
 
 .about_wrap {
@@ -77,6 +78,7 @@
   animation: fadeInUp 0.8s ease-out 0.3s both;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  text-shadow: var(--text-shadow);
 }
 
 .progress_container {

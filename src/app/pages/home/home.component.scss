@@ -12,6 +12,7 @@
     font-weight: bold;
     margin-bottom: 10px;
     color: var(--light-color);
+    text-shadow: var(--text-shadow);
 }
 
 .highlight {
@@ -23,6 +24,7 @@
     opacity: 0.8;
     margin-bottom: 20px;
     line-height: 1.5;
+    text-shadow: var(--text-shadow);
 }
 
 .cta-button {

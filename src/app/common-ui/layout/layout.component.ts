@@ -1,11 +1,10 @@
 import { Component, HostBinding } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SidebarComponent } from '../../components/sidebar/sidebar.component';
-import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-layout',
-  imports: [RouterOutlet, SidebarComponent, NgFor],
+  imports: [RouterOutlet, SidebarComponent],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss'
 })

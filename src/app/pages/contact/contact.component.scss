@@ -17,6 +17,7 @@
     font-size: 96px;
     color: var(--primary-color);
     background: linear-gradient(90deg, var(--primary-color), var(--dark-primary-color));
+    text-shadow: var(--text-shadow);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -26,6 +27,7 @@
 
 .desc {
     font-size: 1.2rem;
+    text-shadow: var(--text-shadow);
     opacity: 0.8;
     margin-bottom: 2rem;
     max-width: 600px;

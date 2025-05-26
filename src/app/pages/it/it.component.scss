@@ -46,6 +46,7 @@
   -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
   animation: fadeInUp 0.8s ease-out both;
+  text-shadow: var(--text-shadow);
 }
 
 .it-subtitle {
@@ -53,6 +54,7 @@
   opacity: 0.8;
   margin-bottom: 2rem;
   animation: fadeInUp 0.8s ease-out both;
+  text-shadow: var(--text-shadow);
 }
 
 .it-nav {
@@ -65,6 +67,7 @@
 
   a {
     color: var(--primary-color);
+    text-shadow: var(--text-shadow);
     text-decoration: none;
     font-weight: bold;
     position: relative;

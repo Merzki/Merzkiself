@@ -9,16 +9,17 @@
 <app-sidebar class="sidebar" [class.open]="isSidebarOpen"></app-sidebar>
 <div class="workspace">
   <div class="floating-xvii-container">
-        <div
-        *ngFor="let item of xviiArray"
-        class="floating-xvii"
-        [style.left.%]="item.startLeft"
-        [style.top.%]="item.startTop"
-        [style.animation-delay.ms]="item.delay"
-        [style.animation-duration.ms]="item.duration"
-        >
-        XVII
-        </div>
+        @for (item of xviiArray; track item) {
+            <div
+            class="floating-xvii"
+            [style.left.%]="item.startLeft"
+            [style.top.%]="item.startTop"
+            [style.animation-delay.ms]="item.delay"
+            [style.animation-duration.ms]="item.duration"
+            >
+            XVII
+            </div>
+        }
     </div>
 
   <router-outlet></router-outlet>
