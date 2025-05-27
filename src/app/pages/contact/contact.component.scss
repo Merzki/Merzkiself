@@ -14,7 +14,7 @@
 }
 
 .headline {
-    font-size: 96px;
+    font-size: 6rem;
     color: var(--primary-color);
     background: linear-gradient(90deg, var(--primary-color), var(--dark-primary-color));
     text-shadow: var(--text-shadow);
@@ -26,7 +26,7 @@
 }
 
 .desc {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     text-shadow: var(--text-shadow);
     opacity: 0.8;
     margin-bottom: 2rem;
@@ -57,12 +57,14 @@
     padding: 2rem;
     border-radius: 1rem;
     text-decoration: none;
-    color: #ffffff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: var(--light-color);
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
     min-height: 150px;
     cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--neon-glow);
 
     &::before {
         content: '';
@@ -73,11 +75,22 @@
         bottom: 0;
         background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
         z-index: 1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
 
     &:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        box-shadow: var(--neon-glow);
+        
+        &::before {
+            opacity: 1;
+        }
+
+        .social-icon {
+            transform: scale(1.1);
+            filter: brightness(1.2) invert(1);
+        }
     }
 
     .social-icon {
@@ -86,17 +99,19 @@
         margin-bottom: 1rem;
         filter: brightness(0) invert(1);
         z-index: 2;
+        transition: all 0.3s ease;
     }
 
     .social-label {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         font-weight: bold;
         margin-bottom: 0.5rem;
         z-index: 2;
+        text-shadow: var(--text-shadow);
     }
 
     .social-value {
-        font-size: 0.9rem;
+        font-size: 1.2rem;
         opacity: 0.9;
         z-index: 2;
     }
@@ -115,27 +130,27 @@
     }
 
     &.email {
-        background: linear-gradient(135deg, #EA4335, #B22234);
+        background: linear-gradient(135deg, var(--primary-color), var(--dark-primary-color));
     }
 
     &.telegram {
-        background: linear-gradient(135deg, #0088cc, #005580);
+        background: linear-gradient(135deg, var(--secondary-color), var(--dark-gray-color));
     }
 
     &.linkedin {
-        background: linear-gradient(135deg, #0077B5, #004471);
+        background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
     }
 
     &.dev {
-        background: linear-gradient(135deg, #0A0A0A, #333333);
+        background: linear-gradient(135deg, var(--dark-gray-color), var(--dark-color));
     }
 
     &.github {
-        background: linear-gradient(135deg, #333333, #000000);
+        background: linear-gradient(135deg, var(--dark-color), var(--dark-gray-color));
     }
 
     &.paypal {
-        background: linear-gradient(135deg, #003087, #009cde);
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     }
 }
 
@@ -143,21 +158,21 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(90deg, var(--primary-color), var(--dark-primary-color));
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     color: var(--light-color);
     padding: 15px 20px;
     border-radius: 10px;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
     margin-top: 20px;
     width: 100%;
     max-width: 400px;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--neon-glow);
 
     &:hover {
         transform: scale(1.05);
-        box-shadow: 0px 0px 15px rgba(178, 34, 52, 0.4);
+        box-shadow: var(--neon-glow);
     }
 }
 
@@ -167,11 +182,11 @@
     padding: 6px;
     border-radius: 50%;
     border: 2px solid;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--neon-glow);
     filter: var(--icon-filter);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: var(--light-filter);
-    border-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    background-color: var(--light-color);
+    border-color: var(--primary-color);
 }
 
 .paypal-text {
@@ -182,6 +197,7 @@
     h3 {
         margin: 0;
         font-size: 1.2rem;
+        text-shadow: var(--text-shadow);
     }
 
     p {
@@ -198,11 +214,11 @@
     }
 
     .headline {
-        font-size: clamp(2.5rem, 8vw, 4rem);
+        font-size: 4.7rem;
     }
 
     .desc {
-        font-size: clamp(0.9rem, 4vw, 1.1rem);
+        font-size: clamp(1.1rem, 4vw, 1.4rem);
     }
 
     .social-grid {
@@ -241,60 +257,45 @@
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
     .content-container {
         width: 95%;
         padding: 20px 15px;
     }
 
     .headline {
-        font-size: clamp(2rem, 10vw, 3rem);
-    }
-
-    .desc {
-        font-size: 0.9rem;
+        font-size: 3.9rem;
     }
 
     .social-grid {
         grid-template-areas:
-            "email"
-            "telegram"
+            "linkedin linkedin"
+            "telegram github"
+            "email email"
+            "paypal dev";
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-container {
+        width: 100%;
+        padding: 15px 10px;
+    }
+
+    .headline {
+        font-size: 3.2rem;
+    }
+
+    .social-grid {
+        grid-template-areas:
             "linkedin"
-            "dev"
+            "telegram"
             "github"
-            "paypal";
+            "email"
+            "paypal"
+            "dev";
         grid-template-columns: 1fr;
-        grid-auto-rows: 140px;
-        gap: 1rem;
-    }
-
-    .social-card {
-        padding: 1.2rem;
-        min-height: 140px;
-
-        &.size-large,
-        &.size-vertical {
-            min-height: 140px;
-            aspect-ratio: unset;
-        }
-
-        .social-icon {
-            width: 36px;
-            height: 36px;
-        }
-
-        .social-label {
-            font-size: 1rem;
-        }
-
-        .social-value {
-            font-size: 0.75rem;
-        }
-    }
-
-    .paypal-banner {
-        padding: 12px 15px;
-        max-width: 100%;
     }
 }
 
