@@ -32,27 +32,35 @@ export class SidebarComponent implements OnInit {
 
   applyTheme() {
     if (this.isLightTheme) {
-      document.documentElement.style.setProperty('--dark-color', '#F5F5F5');
-      document.documentElement.style.setProperty('--light-color', '#0D0D0D');
-      document.documentElement.style.setProperty('--primary-color', '#4169E1'); 
-      document.documentElement.style.setProperty('--dark-primary-color', '#27408B');
-      document.documentElement.style.setProperty('--gray-color', '#B0B0B0');
-      document.documentElement.style.setProperty('--dark-gray-color', '#E0E0E0');
-      document.documentElement.style.setProperty('--dark-hover-color', '#D9D9D9');
+      document.documentElement.style.setProperty('--dark-color', '#E0E0FF');
+      document.documentElement.style.setProperty('--light-color', '#0A0A0F');
+      document.documentElement.style.setProperty('--primary-color', '#00BFFF');
+      document.documentElement.style.setProperty('--dark-primary-color', '#1E90FF');
+      document.documentElement.style.setProperty('--secondary-color', '#87CEEB');
+      document.documentElement.style.setProperty('--accent-color', '#FF69B4');
+      document.documentElement.style.setProperty('--gray-color', '#B0C4DE');
+      document.documentElement.style.setProperty('--dark-gray-color', '#4682B4');
+      document.documentElement.style.setProperty('--dark-hover-color', '#F0F8FF');
 
-      document.documentElement.style.setProperty('--icon-filter', 'invert(27%) sepia(88%) saturate(1803%) hue-rotate(199deg) brightness(95%) contrast(104%)');
-      document.documentElement.style.setProperty('--box-shadow', '0 4px 12px rgba(0, 0, 0, 0.2)'); 
+      document.documentElement.style.setProperty('--icon-filter', 'invert(48%) sepia(79%) saturate(2476%) hue-rotate(199deg) brightness(104%) contrast(101%)');
+      document.documentElement.style.setProperty('--box-shadow', '0 4px 12px rgba(0, 191, 255, 0.2)');
+      document.documentElement.style.setProperty('--text-shadow', '0 0 8px rgba(0, 191, 255, 0.6)');
+      document.documentElement.style.setProperty('--neon-glow', '0 0 10px rgba(0, 191, 255, 0.8), 0 0 20px rgba(0, 191, 255, 0.4)');
     } else {
-      document.documentElement.style.setProperty('--dark-color', '#0D0D0D');
-      document.documentElement.style.setProperty('--light-color', '#F5F5F5');
-      document.documentElement.style.setProperty('--primary-color', '#B22234');
-      document.documentElement.style.setProperty('--dark-primary-color', '#8A1C28');
-      document.documentElement.style.setProperty('--gray-color', '#6C757D');
-      document.documentElement.style.setProperty('--dark-gray-color', '#2C2F33');
-      document.documentElement.style.setProperty('--dark-hover-color', '#1B1B1B');
+      document.documentElement.style.setProperty('--dark-color', '#0A0A0F');
+      document.documentElement.style.setProperty('--light-color', '#E0E0FF');
+      document.documentElement.style.setProperty('--primary-color', '#FF69B4');
+      document.documentElement.style.setProperty('--dark-primary-color', '#FF1493');
+      document.documentElement.style.setProperty('--secondary-color', '#9370DB');
+      document.documentElement.style.setProperty('--accent-color', '#00FFFF');
+      document.documentElement.style.setProperty('--gray-color', '#8A8AFF');
+      document.documentElement.style.setProperty('--dark-gray-color', '#2A2A3F');
+      document.documentElement.style.setProperty('--dark-hover-color', '#1A1A2F');
 
-      document.documentElement.style.setProperty('--icon-filter', 'invert(17%) sepia(93%) saturate(5295%) hue-rotate(-8deg) brightness(94%) contrast(105%)');
-      document.documentElement.style.setProperty('--box-shadow', '0 6px 10px rgba(255, 255, 255, 0.03)'); 
+      document.documentElement.style.setProperty('--icon-filter', 'invert(48%) sepia(79%) saturate(2476%) hue-rotate(325deg) brightness(104%) contrast(101%)');
+      document.documentElement.style.setProperty('--box-shadow', '0 4px 12px rgba(255, 105, 180, 0.2)');
+      document.documentElement.style.setProperty('--text-shadow', '0 0 8px rgba(255, 105, 180, 0.6)');
+      document.documentElement.style.setProperty('--neon-glow', '0 0 10px rgba(255, 105, 180, 0.8), 0 0 20px rgba(255, 105, 180, 0.4)');
     }
   }
 }

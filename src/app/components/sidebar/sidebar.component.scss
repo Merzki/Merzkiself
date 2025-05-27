@@ -5,8 +5,10 @@
     justify-content: space-between;
     padding: 20dvh 12px;
     position: relative;
-    @extend .bg-dark;
-    @extend .text-light;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    border-right: 1px solid var(--primary-color);
+    box-shadow: var(--neon-glow);
 }
 
 .main-menu-list {
@@ -21,7 +23,7 @@
     cursor: pointer;
     border: none;
     background: none;
-    @extend .text-light;
+    color: var(--light-color);
     display: grid;
     grid-template-columns: 16px 1fr max-content;
     grid-gap: 12px;
@@ -31,24 +33,30 @@
     width: 100%;
     text-align: left;
     text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 8px;
 
     .menu-item__icon {
         width: 20px;
         height: 20px;
         filter: var(--icon-filter);
+        transition: all 0.3s ease;
     }
     
     &.active .menu-item__icon,
     &:hover .menu-item__icon,
     &:focus-visible .menu-item__icon {
         filter: var(--icon-filter);
+        transform: scale(1.1);
     }
 
     &.active,
     &:hover,
     &:focus-visible {
-        @include hover-effect;
-        @extend .text-primary;
+        background-color: var(--dark-color);
+        color: var(--primary-color);
+        text-shadow: var(--text-shadow);
+        box-shadow: var(--neon-glow);
     }
 }
 
@@ -58,21 +66,29 @@
     cursor: pointer;
     padding: 12px;
     border-radius: 8px;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
     position: absolute;
     bottom: 20px;
     left: 20px;
-    @include hover-effect;
+    background-color: var(--dark-color);
+    border: 1px solid var(--primary-color);
+    box-shadow: var(--neon-glow);
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: var(--neon-glow);
+    }
 }
 
 .theme-circle {
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background: radial-gradient(circle, crimson 40%, black 60%);
-    transition: background 0.3s ease-in-out;
+    background: radial-gradient(circle, var(--primary-color) 40%, var(--dark-color) 60%);
+    transition: all 0.3s ease-in-out;
+    box-shadow: var(--neon-glow);
 
     &.light {
-        background: radial-gradient(circle, #4169E1 40%, white 60%);
+        background: radial-gradient(circle, var(--primary-color) 40%, var(--light-color) 60%);
     }
 }

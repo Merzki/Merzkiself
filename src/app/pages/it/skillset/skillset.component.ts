@@ -23,7 +23,10 @@ export class SkillsetComponent {
       class: 'backend',
       title: 'Backend',
       description: 'Ensuring stable backend performance with well-thought-out API architecture',
-      items: [{ label: 'Language', value: 'PHP' }]
+      items: [
+        { label: 'Language', value: 'PHP' },
+        { label: 'Framework', value: 'Express.js'}
+      ]
     },
     {
       class: 'desktop',

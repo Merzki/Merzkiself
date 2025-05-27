@@ -1,30 +1,35 @@
 @use 'app/common-ui/mixins' as *;
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
-:root{
-    --dark-color: #0D0D0D;      
-    --light-color: #F5F5F5;      
-    --primary-color: #B22234;   
-    --dark-primary-color: #8A1C28;
-    --gray-color: #6C757D;      
-    --dark-gray-color: #2C2F33;  
-    --dark-hover-color: #1B1B1B;
-    --icon-filter: invert(17%) sepia(93%) saturate(5295%) hue-rotate(-8deg) brightness(94%) contrast(105%);
-    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    --text-shadow: 1px 1px 3px rgba(13, 13, 13, 0.4);
+:root {
+    --dark-color: #0A0A0F;      
+    --light-color: #E0E0FF;     
+    --primary-color: #FF69B4;   
+    --dark-primary-color: #FF1493; 
+    --secondary-color: #9370DB; 
+    --accent-color: #00FFFF;    
+    --gray-color: #8A8AFF;      
+    --dark-gray-color: #2A2A3F; 
+    --dark-hover-color: #1A1A2F;
+    --icon-filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(325deg) brightness(104%) contrast(101%);
+    --box-shadow: 0 4px 12px rgba(255, 105, 180, 0.2);
+    --text-shadow: 0 0 8px rgba(255, 105, 180, 0.6);
+    --neon-glow: 0 0 10px rgba(255, 105, 180, 0.8), 0 0 20px rgba(255, 105, 180, 0.4);
 }
 
 *,
 *:before,
-*:after{
+*:after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 } 
 
-body{
+body {
     background-color: var(--dark-color);
     color: var(--light-color);
-    font-family: Helvetica;
+    font-family: 'VT323', monospace;
+    line-height: 1.6;
 }
 
 .content-container {
@@ -49,47 +54,92 @@ body{
 }
 
 .it-section {
-  @include card-style;
-  @include flex-column;
-  width: 100%;
-  text-align: left;
-  margin-bottom: 20px;
-  @extend .fade-in;
+    @include card-style;
+    @include flex-column;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+    @extend .fade-in;
+    background-color: rgba(42, 42, 63, 0.95);
+    border: 1px solid var(--secondary-color);
+    box-shadow: var(--neon-glow);
 
-  h2 {
-    font-size: 28px;
-    @extend .text-primary;
-    margin-bottom: 12px;
-  }
-
-  p {
-    font-size: 1.1rem;
-    margin-bottom: 12px;
-    opacity: 0.9;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-
-    li {
-      font-size: 1.1rem;
-      padding: 6px 0;
-      @include flex-left;
-
-      span {
-        font-weight: bold;
+    h2 {
+        font-size: 28px;
         @extend .text-primary;
-        margin-right: 4px;
-      }
+        margin-bottom: 12px;
+        text-shadow: var(--text-shadow);
+        letter-spacing: 1px;
     }
 
-    li::before {
-      @extend .text-primary;
-      font-size: 1.2rem;
-      margin-right: 10px;
+    p {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+        opacity: 0.9;
+        color: var(--light-color);
+        line-height: 1.6;
     }
-  }
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            font-size: 1.2rem;
+            padding: 6px 0;
+            @include flex-left;
+            color: var(--light-color);
+            line-height: 1.6;
+
+            span {
+                font-weight: bold;
+                @extend .text-primary;
+                margin-right: 4px;
+                text-shadow: var(--text-shadow);
+            }
+        }
+
+        li::before {
+            @extend .text-primary;
+            font-size: 1.2rem;
+            margin-right: 10px;
+            text-shadow: var(--text-shadow);
+        }
+    }
+}
+
+.text-primary {
+    color: var(--primary-color);
+    text-shadow: var(--text-shadow);
+}
+
+.text-secondary {
+    color: var(--secondary-color);
+    text-shadow: var(--text-shadow);
+}
+
+.text-accent {
+    color: var(--accent-color);
+    text-shadow: var(--text-shadow);
+}
+
+@keyframes neon-pulse {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 105, 180, 0.8),
+                    0 0 10px rgba(255, 105, 180, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(255, 105, 180, 0.8),
+                    0 0 20px rgba(255, 105, 180, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(255, 105, 180, 0.8),
+                    0 0 10px rgba(255, 105, 180, 0.4);
+    }
+}
+
+.neon-effect {
+    animation: neon-pulse 2s infinite;
 }
 
   
