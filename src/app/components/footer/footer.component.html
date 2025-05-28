@@ -1,0 +1,35 @@
+<div class="footer-container">
+  <div class="music-player" *ngIf="(currentSong$ | async) as currentSong">
+    <div class="song-info">
+      <span class="song-title">{{ currentSong.title }}</span>
+      <span class="song-artist">{{ currentSong.artist }}</span>
+    </div>
+    <div class="player-controls">
+      <button mat-icon-button (click)="playPrevious()" matTooltip="Previous">
+        <mat-icon>skip_previous</mat-icon>
+      </button>
+      <button mat-fab (click)="togglePlay()" [matTooltip]="(isPlaying$ | async) ? 'Pause' : 'Play'">
+        <mat-icon>{{ (isPlaying$ | async) ? 'pause' : 'play_arrow' }}</mat-icon>
+      </button>
+      <button mat-icon-button (click)="playNext()" matTooltip="Next">
+        <mat-icon>skip_next</mat-icon>
+      </button>
+    </div>
+    <div class="volume-control">
+      <button mat-icon-button (click)="toggleMute()" matTooltip="Mute">
+        <mat-icon>{{ (volume$ | async) === 0 ? 'volume_off' : 'volume_up' }}</mat-icon>
+      </button>
+      <mat-slider
+        [min]="0"
+        [max]="1"
+        [step]="0.1"
+        [discrete]="true"
+        (change)="onVolumeChange($event)"
+        class="volume-slider">
+        <input matSliderThumb
+          [value]="volume$ | async"
+          (valueChange)="onVolumeChange($event)">
+      </mat-slider>
+    </div>
+  </div>
+</div>

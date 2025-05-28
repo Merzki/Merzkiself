@@ -22,22 +22,22 @@
 
   @media (max-width: 480px) {
     .it-title {
-      font-size: 3rem;
+      font-size: 2.8rem;
     }
 
     .it-subtitle {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
     }
 
     .it-nav {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       gap: 10px;
     }
   }
 }
 
 .it-title {
-  font-size: 5rem;
+  font-size: clamp(3rem, 5vw, 4.5rem);
   font-weight: bold;
   text-transform: uppercase;
   background: linear-gradient(90deg, var(--primary-color), var(--dark-primary-color));
@@ -50,7 +50,7 @@
 }
 
 .it-subtitle {
-  font-size: 2.2rem;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
   opacity: 0.8;
   margin-bottom: 2rem;
   animation: fadeInUp 0.8s ease-out both;
@@ -59,7 +59,7 @@
 
 .it-nav {
   display: flex;
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
   gap: 20px;
   flex-wrap: wrap;
   justify-content: center;

@@ -70,6 +70,7 @@
   height: 100%;
   overflow: hidden;
   z-index: -1;
+  filter: blur(9px);
 }
 
 .floating-xvii {
@@ -77,13 +78,14 @@
   font-size: 140px;
   font-weight: 900;
   color: var(--gray-color);
-  animation: floatDiagonal 12s linear infinite;
+  animation: floatDiagonal 25s linear infinite;
   user-select: none;
   white-space: nowrap;
   pointer-events: none;
   will-change: transform, opacity;
   transform: translate(-100vw, 100vh);
   opacity: 0;
+  filter: blur(4px);
 }
 
 @keyframes floatDiagonal {
@@ -91,11 +93,11 @@
     transform: translate(-100vw, 100vh);
     opacity: 0;
   }
-  2% {
-    opacity: 1;
+  5% {
+    opacity: 0.15;
   }
-  98% {
-    opacity: 1;
+  95% {
+    opacity: 0.15;
   }
   100% {
     transform: translate(60vw, -60vh);
@@ -142,4 +144,79 @@
     .floating-xvii {
     font-size: 70px;
   }
+}
+
+.layout-container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark-color);
+    overflow: hidden;
+}
+
+.floating-letters {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.15;
+    filter: blur(1px);
+}
+
+.letter {
+    position: absolute;
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: var(--text-shadow);
+    animation: float 25s infinite linear;
+    opacity: 0.3;
+
+    &:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+    &:nth-child(2) { top: 20%; left: 15%; animation-delay: -5s; }
+    &:nth-child(3) { top: 30%; left: 25%; animation-delay: -10s; }
+    &:nth-child(4) { top: 40%; left: 35%; animation-delay: -15s; }
+    &:nth-child(5) { top: 50%; left: 45%; animation-delay: -20s; }
+    &:nth-child(6) { top: 60%; left: 55%; animation-delay: -25s; }
+    &:nth-child(7) { top: 70%; left: 65%; animation-delay: -30s; }
+    &:nth-child(8) { top: 80%; left: 75%; animation-delay: -35s; }
+    &:nth-child(9) { top: 90%; left: 85%; animation-delay: -40s; }
+    &:nth-child(10) { top: 15%; left: 95%; animation-delay: -45s; }
+    &:nth-child(11) { top: 25%; left: 85%; animation-delay: -50s; }
+    &:nth-child(12) { top: 35%; left: 75%; animation-delay: -55s; }
+    &:nth-child(13) { top: 45%; left: 65%; animation-delay: -60s; }
+    &:nth-child(14) { top: 55%; left: 55%; animation-delay: -65s; }
+    &:nth-child(15) { top: 65%; left: 45%; animation-delay: -70s; }
+    &:nth-child(16) { top: 75%; left: 35%; animation-delay: -75s; }
+    &:nth-child(17) { top: 85%; left: 25%; animation-delay: -80s; }
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(10px, 10px) rotate(5deg);
+    }
+    50% {
+        transform: translate(0, 20px) rotate(0deg);
+    }
+    75% {
+        transform: translate(-10px, 10px) rotate(-5deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+.main-content {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }

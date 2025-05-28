@@ -2,19 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 :root {
-    --dark-color: #0A0A0F;      
-    --light-color: #E0E0FF;     
-    --primary-color: #FF69B4;   
-    --dark-primary-color: #FF1493; 
-    --secondary-color: #9370DB; 
-    --accent-color: #00FFFF;    
-    --gray-color: #8A8AFF;      
-    --dark-gray-color: #2A2A3F; 
-    --dark-hover-color: #1A1A2F;
-    --icon-filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(325deg) brightness(104%) contrast(101%);
-    --box-shadow: 0 4px 12px rgba(255, 105, 180, 0.2);
-    --text-shadow: 0 0 8px rgba(255, 105, 180, 0.6);
-    --neon-glow: 0 0 10px rgba(255, 105, 180, 0.8), 0 0 20px rgba(255, 105, 180, 0.4);
+    --primary-color: #ff2a6d;
+    --secondary-color: #05d9e8;
+    --accent-color: #d1f7ff;
+    --dark-color: #01012b;
+    --dark-primary-color: #ff2a6d;
+    --dark-secondary-color: #05d9e8;
+    --dark-accent-color: #d1f7ff;
+    --light-color: #ffffff;
+    --dark-gray-color: #1a1a2e;
+    --text-shadow: 0 0 10px rgba(255, 42, 109, 0.5);
+    --box-shadow: 0 0 20px rgba(255, 42, 109, 0.2);
+    --icon-filter: drop-shadow(0 0 5px rgba(255, 42, 109, 0.5));
 }
 
 *,
@@ -26,10 +25,23 @@
 } 
 
 body {
+    margin: 0;
+    font-family: 'Press Start 2P', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: var(--dark-color);
     color: var(--light-color);
-    font-family: 'VT323', monospace;
-    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    animation: backgroundMove 30s linear infinite;
+}
+
+@keyframes backgroundMove {
+    0% {
+        background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    }
+    100% {
+        background-position: 20px 20px, 20px 30px, 30px 10px, 10px 20px;
+    }
 }
 
 .content-container {
@@ -62,7 +74,7 @@ body {
     @extend .fade-in;
     background-color: rgba(42, 42, 63, 0.95);
     border: 1px solid var(--secondary-color);
-    box-shadow: var(--neon-glow);
+    box-shadow: var(--box-shadow);
 
     h2 {
         font-size: 28px;
@@ -125,21 +137,37 @@ body {
 
 @keyframes neon-pulse {
     0% {
-        box-shadow: 0 0 5px rgba(255, 105, 180, 0.8),
-                    0 0 10px rgba(255, 105, 180, 0.4);
+        box-shadow: 0 0 4px rgba(255, 105, 180, 0.4);
     }
     50% {
-        box-shadow: 0 0 10px rgba(255, 105, 180, 0.8),
-                    0 0 20px rgba(255, 105, 180, 0.4);
+        box-shadow: 0 0 8px rgba(255, 105, 180, 0.4);
     }
     100% {
-        box-shadow: 0 0 5px rgba(255, 105, 180, 0.8),
-                    0 0 10px rgba(255, 105, 180, 0.4);
+        box-shadow: 0 0 4px rgba(255, 105, 180, 0.4);
     }
 }
 
 .neon-effect {
-    animation: neon-pulse 2s infinite;
+    animation: neon-pulse 3s infinite;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
 }
 
   
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

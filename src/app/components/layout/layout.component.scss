@@ -1,0 +1,13 @@
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 250px; // Adjust based on your sidebar width
+  position: relative;
+  z-index: 1;
+} 

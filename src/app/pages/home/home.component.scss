@@ -8,7 +8,7 @@
 }
 
 .title {
-    font-size: 3.5rem; 
+    font-size: clamp(2.8rem, 4vw, 3.5rem);
     font-weight: bold;
     margin-bottom: 10px;
     color: var(--light-color);
@@ -20,7 +20,7 @@
 }
 
 .subtitle {
-    font-size: 1.7rem;
+    font-size: clamp(1.2rem, 2vw, 1.7rem);
     opacity: 0.8;
     margin-bottom: 20px;
     line-height: 1.5;
@@ -32,10 +32,11 @@
     color: var(--light-color);
     text-decoration: none;
     border-radius: 8px;
-    padding: 12px 24px;
+    padding: 18px 36px;
     font-weight: bold;
     display: inline-block;
     transition: filter 0.3s ease-in-out;
+    font-size: clamp(1.1rem, 1.5vw, 1.5rem);
 
     &:hover {
         filter: brightness(90%);
@@ -45,16 +46,16 @@
 
 @media (max-width: 768px) {
     .title {
-        font-size: 3.2rem;
+        font-size: 2.8rem;
     }
 
     .subtitle {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
 
     .cta-button {
-        padding: 10px 20px;
-        font-size: 0.95rem;
+        padding: 12px 24px;
+        font-size: 1.1rem;
     }
 
     .icon {
@@ -65,16 +66,16 @@
 
 @media (max-width: 480px) {
     .title {
-        font-size: 2.9rem;
+        font-size: 2.5rem;
     }
 
     .subtitle {
-        font-size: 1.1rem; 
+        font-size: 1.1rem;
     }
 
     .cta-button {
         width: 100%;
-        padding: 12px; 
+        padding: 12px;
         font-size: 1rem;
     }
 
