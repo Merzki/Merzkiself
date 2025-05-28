@@ -14,22 +14,22 @@ export class MusicPlayerService {
   private playlist: Song[] = [
     {
       title: 'Welcome to VA-11 HALL-A',
-      artist: 'Michael Kelly',
+      artist: 'Garoad',
       path: 'assets/music/Welcome_to_VA_11_HALL_A.mp3'
     },
     {
       title: 'Every Day is Night',
-      artist: 'Michael Kelly',
+      artist: 'Garoad',
       path: 'assets/music/Every_Day_is_Night.mp3'
     },
     {
       title: 'Good for Health, Bad for Education',
-      artist: 'Michael Kelly',
+      artist: 'Garoad',
       path: 'assets/music/Good_for_Health_Bad_for_Education.mp3'
     },
     {
       title: 'Who Was I',
-      artist: 'Michael Kelly',
+      artist: 'Garoad',
       path: 'assets/music/Who_Was_I.mp3'
     }
   ];

@@ -18,7 +18,45 @@
   }
 }
 
+.player-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--primary-color);
+  color: var(--light-color);
+  border: none;
+  z-index: 1001;
+  transition: all 0.3s ease;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+
+  mat-icon {
+    color: var(--light-color);
+  }
+
+  &.playing {
+    box-shadow: 0 0 15px var(--primary-color);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(var(--primary-color-rgb), 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(var(--primary-color-rgb), 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(var(--primary-color-rgb), 0);
+    }
+  }
+}
+
 .music-player {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
   display: flex;
   align-items: center;
   gap: clamp(8px, 2vw, 16px);
@@ -28,39 +66,54 @@
   box-shadow: var(--box-shadow);
   backdrop-filter: blur(10px);
   border: 1px solid var(--primary-color);
-  min-width: 300px;
+  min-width: clamp(250px, 40vw, 300px);
   max-width: 100%;
   pointer-events: auto;
+  flex-wrap: nowrap;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.3s ease;
+  pointer-events: none;
+
+  &.visible {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
 
   @media (max-width: 768px) {
     min-width: auto;
-    width: 100%;
+    width: calc(100% - 40px);
+    right: 20px;
   }
 }
 
 .song-info {
   display: flex;
   flex-direction: column;
-  min-width: clamp(100px, 15vw, 150px);
+  min-width: clamp(100px, 20vw, 150px);
   pointer-events: none;
   flex: 1;
-  
-  .song-title {
-    font-size: clamp(12px, 1.5vw, 14px);
-    color: var(--primary-color);
-    font-weight: 500;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
-  .song-artist {
-    font-size: clamp(10px, 1.2vw, 12px);
-    color: var(--gray-color);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.song-title {
+  font-size: clamp(12px, 1.5vw, 14px);
+  color: var(--primary-color);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.song-artist {
+  font-size: clamp(10px, 1.2vw, 12px);
+  color: var(--gray-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .player-controls {
@@ -69,9 +122,26 @@
   gap: clamp(4px, 1vw, 8px);
   pointer-events: auto;
   flex-shrink: 0;
+  flex-wrap: nowrap;
 
   button {
     color: var(--primary-color);
+    width: clamp(32px, 3.7vw, 40px) !important;
+    height: clamp(32px, 3.7vw, 40px) !important;
+    line-height: clamp(32px, 3.7vw, 40px) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    
+    mat-icon {
+      font-size: clamp(20px, 2.2vw, 24px) !important;
+      width: clamp(20px, 2.2vw, 24px) !important;
+      height: clamp(20px, 2.2vw, 24px) !important;
+      line-height: clamp(20px, 2.2vw, 24px) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
     
     &:hover {
       background: var(--dark-hover-color);
@@ -81,19 +151,25 @@
   .mat-fab {
     background: var(--primary-color);
     color: var(--dark-color);
-    width: clamp(32px, 4vw, 40px);
-    height: clamp(32px, 4vw, 40px);
-    line-height: clamp(32px, 4vw, 40px);
+    width: clamp(32px, 4vw, 40px) !important;
+    height: clamp(32px, 4vw, 40px) !important;
+    line-height: clamp(32px, 4vw, 40px) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     
     &:hover {
       background: var(--secondary-color);
     }
 
     mat-icon {
-      font-size: clamp(16px, 2vw, 20px);
-      width: clamp(16px, 2vw, 20px);
-      height: clamp(16px, 2vw, 20px);
-      line-height: clamp(16px, 2vw, 20px);
+      font-size: clamp(20px, 2.2vw, 24px) !important;
+      width: clamp(20px, 2.2vw, 24px) !important;
+      height: clamp(20px, 2.2vw, 24px) !important;
+      line-height: clamp(20px, 2.2vw, 24px) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
     }
   }
 }
@@ -103,11 +179,28 @@
   align-items: center;
   gap: clamp(4px, 1vw, 8px);
   margin-left: clamp(4px, 1vw, 8px);
-  min-width: clamp(80px, 12vw, 120px);
+  min-width: clamp(80px, 15vw, 120px);
   flex-shrink: 0;
+  flex-wrap: nowrap;
 
   button {
     color: var(--primary-color);
+    width: clamp(32px, 3.7vw, 40px) !important;
+    height: clamp(32px, 3.7vw, 40px) !important;
+    line-height: clamp(32px, 3.7vw, 40px) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    
+    mat-icon {
+      font-size: clamp(20px, 2.2vw, 24px) !important;
+      width: clamp(20px, 2.2vw, 24px) !important;
+      height: clamp(20px, 2.2vw, 24px) !important;
+      line-height: clamp(20px, 2.2vw, 24px) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
     
     &:hover {
       background: var(--dark-hover-color);
@@ -124,10 +217,38 @@
       
       .mat-slider-thumb {
         background-color: var(--primary-color);
+        width: clamp(10px, 1.2vw, 14px) !important;
+        height: clamp(10px, 1.2vw, 14px) !important;
+        border-radius: 50%;
+        transform: scale(1) !important;
       }
       
       .mat-slider-track-background {
         background-color: var(--gray-color);
+        height: clamp(2px, 0.2vw, 3px) !important;
+      }
+
+      .mat-slider-horizontal {
+        height: clamp(10px, 1.2vw, 14px) !important;
+        min-height: clamp(10px, 1.2vw, 14px) !important;
+      }
+
+      .mat-slider-track {
+        height: clamp(2px, 0.2vw, 3px) !important;
+      }
+
+      .mat-slider-wrapper {
+        height: clamp(10px, 1.2vw, 14px) !important;
+      }
+
+      .mat-slider-track-wrapper {
+        height: clamp(10px, 1.2vw, 14px) !important;
+      }
+
+      .mat-slider-thumb-label {
+        width: clamp(10px, 1.2vw, 14px) !important;
+        height: clamp(10px, 1.2vw, 14px) !important;
+        transform: scale(1) !important;
       }
     }
   }
