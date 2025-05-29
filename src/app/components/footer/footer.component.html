@@ -8,7 +8,7 @@
       <button mat-icon-button (click)="playPrevious()" matTooltip="Previous">
         <mat-icon>skip_previous</mat-icon>
       </button>
-      <button mat-fab (click)="togglePlay()" [matTooltip]="(isPlaying$ | async) ? 'Pause' : 'Play'">
+      <button mat-fab (click)="togglePlay()" [class.playing]="isPlaying$ | async" [matTooltip]="(isPlaying$ | async) ? 'Pause' : 'Play'">
         <mat-icon>{{ (isPlaying$ | async) ? 'pause' : 'play_arrow' }}</mat-icon>
       </button>
       <button mat-icon-button (click)="playNext()" matTooltip="Next">
