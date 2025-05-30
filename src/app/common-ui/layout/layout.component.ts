@@ -22,8 +22,8 @@ export class LayoutComponent {
   }
 
   xviiArray = Array.from({ length: 20 }, () => ({
-    delay: Math.random() * 2000,
-    duration: 4000 + Math.random() * 4000, 
+    delay: Math.random() * 3000,
+    duration: 8000 + Math.random() * 4000, 
     startLeft: Math.random() * 100,
     startTop: Math.random() * 100
   }));
