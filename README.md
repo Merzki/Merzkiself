@@ -15,6 +15,7 @@ A modern, responsive personal portfolio website built with Angular 19 and Angula
 - [Components](#components)
 - [Services](#services)
 - [Styling](#styling)
+- [Attributions and Licenses](#attributions-and-licenses)
 - [License](#license)
 
 ## Features
@@ -108,6 +109,23 @@ The project uses SCSS for styling with:
 - CSS variables for theming
 - BEM methodology for CSS class naming
 - Mobile-first approach
+
+## Attributions and Licenses
+### Music
+The music player features tracks from the VA-11 HALL-A soundtrack by Garoad:
+- "Welcome to VA-11 HALL-A"
+- "Every Day is Night"
+- "Good for Health, Bad for Education"
+- "Who Was I"
+
+All music is used with permission and proper attribution to Garoad.
+
+### Fonts
+- VT323 font from Google Fonts (https://fonts.google.com/specimen/VT323)
+
+### UI Components
+- Angular Material components and icons
+- Material Design icons
 
 ## License
 This project is licensed under the [MIT License](LICENSE.md)
