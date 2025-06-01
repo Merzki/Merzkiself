@@ -1,34 +1,34 @@
 .footer-container {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 1.25rem;
+  right: 1.25rem;
   z-index: 1000;
   pointer-events: auto;
   width: 100%;
   max-width: 60%;
   display: flex;
   justify-content: flex-end;
-  padding: 0 20px;
+  padding: 0 1.25rem;
   box-sizing: border-box;
 
   @media (max-width: 768px) {
     max-width: 100%;
     right: 0;
-    padding: 0 10px;
+    padding: 0 0.625rem;
   }
 }
 
 .player-toggle {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 1.25rem;
+  right: 1.25rem;
   background: var(--primary-color);
   color: var(--light-color);
   border: none;
   z-index: 1001;
   transition: all 0.3s ease;
-  width: 56px;
-  height: 56px;
+  width: 3.5rem;
+  height: 3.5rem;
   border-radius: 50%;
 
   mat-icon {
@@ -36,24 +36,24 @@
   }
 
   &.playing {
-    box-shadow: 0 0 20px var(--primary-color);
+    box-shadow: 0 0 1.25rem var(--primary-color);
   }
 }
 
 .music-player {
   position: fixed;
-  bottom: 90px;
-  right: 20px;
+  bottom: 5.625rem;
+  right: 1.25rem;
   display: flex;
   align-items: center;
-  gap: clamp(8px, 2vw, 16px);
+  gap: clamp(0.5rem, 2vw, 1rem);
   background: var(--dark-color);
-  padding: clamp(6px, 1.5vw, 8px) clamp(12px, 2vw, 16px);
-  border-radius: 50px;
+  padding: clamp(0.375rem, 1.5vw, 0.5rem) clamp(0.75rem, 2vw, 1rem);
+  border-radius: 3.125rem;
   box-shadow: var(--box-shadow);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--primary-color);
-  min-width: clamp(250px, 40vw, 300px);
+  backdrop-filter: blur(0.625rem);
+  border: 0.0625rem solid var(--primary-color);
+  min-width: clamp(15.625rem, 40vw, 18.75rem);
   max-width: 100%;
   pointer-events: auto;
   flex-wrap: nowrap;
@@ -70,15 +70,15 @@
 
   @media (max-width: 768px) {
     min-width: auto;
-    width: calc(100% - 40px);
-    right: 20px;
+    width: calc(100% - 2.5rem);
+    right: 1.25rem;
   }
 }
 
 .song-info {
   display: flex;
   flex-direction: column;
-  min-width: clamp(100px, 20vw, 150px);
+  min-width: clamp(6.25rem, 20vw, 9.375rem);
   pointer-events: none;
   flex: 1;
   white-space: nowrap;
@@ -87,7 +87,7 @@
 }
 
 .song-title {
-  font-size: clamp(12px, 1.5vw, 14px);
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
   color: var(--primary-color);
   font-weight: 500;
   white-space: nowrap;
@@ -96,7 +96,7 @@
 }
 
 .song-artist {
-  font-size: clamp(10px, 1.2vw, 12px);
+  font-size: clamp(0.625rem, 1.2vw, 0.75rem);
   color: var(--gray-color);
   white-space: nowrap;
   overflow: hidden;
@@ -106,25 +106,25 @@
 .player-controls {
   display: flex;
   align-items: center;
-  gap: clamp(4px, 1vw, 8px);
+  gap: clamp(0.25rem, 1vw, 0.5rem);
   pointer-events: auto;
   flex-shrink: 0;
   flex-wrap: nowrap;
 
   button {
     color: var(--primary-color);
-    width: clamp(32px, 3.7vw, 40px) !important;
-    height: clamp(32px, 3.7vw, 40px) !important;
-    line-height: clamp(32px, 3.7vw, 40px) !important;
+    width: clamp(2rem, 3.7vw, 2.5rem) !important;
+    height: clamp(2rem, 3.7vw, 2.5rem) !important;
+    line-height: clamp(2rem, 3.7vw, 2.5rem) !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     
     mat-icon {
-      font-size: clamp(20px, 2.2vw, 24px) !important;
-      width: clamp(20px, 2.2vw, 24px) !important;
-      height: clamp(20px, 2.2vw, 24px) !important;
-      line-height: clamp(20px, 2.2vw, 24px) !important;
+      font-size: clamp(1.25rem, 2.2vw, 1.5rem) !important;
+      width: clamp(1.25rem, 2.2vw, 1.5rem) !important;
+      height: clamp(1.25rem, 2.2vw, 1.5rem) !important;
+      line-height: clamp(1.25rem, 2.2vw, 1.5rem) !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
@@ -138,9 +138,9 @@
   .mat-fab {
     background: var(--primary-color);
     color: var(--dark-color);
-    width: clamp(32px, 4vw, 40px) !important;
-    height: clamp(32px, 4vw, 40px) !important;
-    line-height: clamp(32px, 4vw, 40px) !important;
+    width: clamp(2rem, 4vw, 2.5rem) !important;
+    height: clamp(2rem, 4vw, 2.5rem) !important;
+    line-height: clamp(2rem, 4vw, 2.5rem) !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -151,14 +151,14 @@
     }
 
     &.playing {
-      box-shadow: 0 0 20px var(--primary-color);
+      box-shadow: 0 0 1.25rem var(--primary-color);
     }
 
     mat-icon {
-      font-size: clamp(20px, 2.2vw, 24px) !important;
-      width: clamp(20px, 2.2vw, 24px) !important;
-      height: clamp(20px, 2.2vw, 24px) !important;
-      line-height: clamp(20px, 2.2vw, 24px) !important;
+      font-size: clamp(1.25rem, 2.2vw, 1.5rem) !important;
+      width: clamp(1.25rem, 2.2vw, 1.5rem) !important;
+      height: clamp(1.25rem, 2.2vw, 1.5rem) !important;
+      line-height: clamp(1.25rem, 2.2vw, 1.5rem) !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
@@ -169,26 +169,26 @@
 .volume-control {
   display: flex;
   align-items: center;
-  gap: clamp(4px, 1vw, 8px);
-  margin-left: clamp(4px, 1vw, 8px);
-  min-width: clamp(80px, 15vw, 120px);
+  gap: clamp(0.25rem, 1vw, 0.5rem);
+  margin-left: clamp(0.25rem, 1vw, 0.5rem);
+  min-width: clamp(5rem, 15vw, 7.5rem);
   flex-shrink: 0;
   flex-wrap: nowrap;
 
   button {
     color: var(--primary-color);
-    width: clamp(32px, 3.7vw, 40px) !important;
-    height: clamp(32px, 3.7vw, 40px) !important;
-    line-height: clamp(32px, 3.7vw, 40px) !important;
+    width: clamp(2rem, 3.7vw, 2.5rem) !important;
+    height: clamp(2rem, 3.7vw, 2.5rem) !important;
+    line-height: clamp(2rem, 3.7vw, 2.5rem) !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     
     mat-icon {
-      font-size: clamp(20px, 2.2vw, 24px) !important;
-      width: clamp(20px, 2.2vw, 24px) !important;
-      height: clamp(20px, 2.2vw, 24px) !important;
-      line-height: clamp(20px, 2.2vw, 24px) !important;
+      font-size: clamp(1.25rem, 2.2vw, 1.5rem) !important;
+      width: clamp(1.25rem, 2.2vw, 1.5rem) !important;
+      height: clamp(1.25rem, 2.2vw, 1.5rem) !important;
+      line-height: clamp(1.25rem, 2.2vw, 1.5rem) !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
@@ -200,7 +200,7 @@
   }
 
   .volume-slider {
-    width: clamp(40px, 8vw, 80px);
+    width: clamp(2.5rem, 8vw, 5rem);
     
     ::ng-deep {
       .mat-slider-track-fill {
@@ -209,37 +209,37 @@
       
       .mat-slider-thumb {
         background-color: var(--primary-color);
-        width: clamp(10px, 1.2vw, 14px) !important;
-        height: clamp(10px, 1.2vw, 14px) !important;
+        width: clamp(0.625rem, 1.2vw, 0.875rem) !important;
+        height: clamp(0.625rem, 1.2vw, 0.875rem) !important;
         border-radius: 50%;
         transform: scale(1) !important;
       }
       
       .mat-slider-track-background {
         background-color: var(--gray-color);
-        height: clamp(2px, 0.2vw, 3px) !important;
+        height: clamp(0.125rem, 0.2vw, 0.1875rem) !important;
       }
 
       .mat-slider-horizontal {
-        height: clamp(10px, 1.2vw, 14px) !important;
-        min-height: clamp(10px, 1.2vw, 14px) !important;
+        height: clamp(0.625rem, 1.2vw, 0.875rem) !important;
+        min-height: clamp(0.625rem, 1.2vw, 0.875rem) !important;
       }
 
       .mat-slider-track {
-        height: clamp(2px, 0.2vw, 3px) !important;
+        height: clamp(0.125rem, 0.2vw, 0.1875rem) !important;
       }
 
       .mat-slider-wrapper {
-        height: clamp(10px, 1.2vw, 14px) !important;
+        height: clamp(0.625rem, 1.2vw, 0.875rem) !important;
       }
 
       .mat-slider-track-wrapper {
-        height: clamp(10px, 1.2vw, 14px) !important;
+        height: clamp(0.625rem, 1.2vw, 0.875rem) !important;
       }
 
       .mat-slider-thumb-label {
-        width: clamp(10px, 1.2vw, 14px) !important;
-        height: clamp(10px, 1.2vw, 14px) !important;
+        width: clamp(0.625rem, 1.2vw, 0.875rem) !important;
+        height: clamp(0.625rem, 1.2vw, 0.875rem) !important;
         transform: scale(1) !important;
       }
     }

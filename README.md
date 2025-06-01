@@ -1,59 +1,121 @@
-# Merzkiself
+# MerzkiSelf - Personal Portfolio Website
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
+A modern, responsive personal portfolio website built with Angular 19 and Angular Material.
 
-## Development server
+## Table of Contents
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Development Server](#development-server)
+  - [Build](#build)
+  - [Production Deployment](#production-deployment)
+- [Project Structure](#project-structure)
+- [Components](#components)
+- [Services](#services)
+- [Styling](#styling)
+- [Contributing](#contributing)
+- [License](#license)
 
-To start a local development server, run:
+## Features
+- Responsive design that works on all devices
+- Modern UI with Angular Material components
+- Interactive music player
+- Smooth animations and transitions
+- Dark/Light theme support
+- Optimized performance
+- SEO friendly
 
+## Technologies Used
+- Angular 19
+- Angular Material
+- TypeScript
+- SCSS
+- RxJS
+- Express.js (for production deployment)
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v18 or higher)
+- npm (v9 or higher)
+- Angular CLI (v19 or higher)
+
+### Installation
+1. Clone the repository:
 ```bash
-ng serve
+git clone https://github.com/yourusername/merzkiself.git
+cd merzkiself
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+2. Install dependencies:
 ```bash
-ng generate component component-name
+npm install
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
+### Development Server
+Run the development server:
 ```bash
-ng generate --help
+npm start
+```
+Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+### Build
+Build the project:
+```bash
+npm run build
+```
+The build artifacts will be stored in the `dist/` directory.
+
+### Production Deployment
+For production deployment:
+```bash
+npm run start:prod
 ```
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
+## Project Structure
+```
+src/
+├── app/
+│   ├── components/     # Reusable UI components
+│   ├── services/       # Angular services
+│   ├── layout/         # Layout components
+│   ├── common-ui/      # Common UI elements
+│   ├── pages/          # Page components
+│   ├── app.component.ts
+│   ├── app.routes.ts
+│   └── app.config.ts
+├── assets/            # Static assets
+└── styles/           # Global styles
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Components
+The application is built with a component-based architecture:
 
-## Running unit tests
+- **Footer Component**: Contains the music player and navigation controls
+- **Layout Components**: Handle the overall page structure
+- **Common UI Components**: Reusable UI elements
+- **Page Components**: Individual page implementations
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Services
+- **Music Service**: Handles music player functionality
+- **Theme Service**: Manages application theming
+- **Navigation Service**: Handles routing and navigation
 
-```bash
-ng test
-```
+## Styling
+The project uses SCSS for styling with:
+- Responsive design using rem units
+- CSS variables for theming
+- BEM methodology for CSS class naming
+- Mobile-first approach
 
-## Running end-to-end tests
+## Contributing
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.

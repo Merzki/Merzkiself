@@ -41,7 +41,7 @@ export class AboutComponent implements OnInit, OnDestroy {
   ];
   currentSlide = 0;
   animationState: 'enter' | 'leave' = 'enter';
-  slideDuration = 4000;
+  slideDuration = 5000;
   intervalId: any;
 
   ngOnInit(): void {

@@ -46,11 +46,9 @@ export class MusicPlayerService {
   volume$ = this.volumeSubject.asObservable();
 
   constructor() {
-    console.log('Initializing MusicPlayerService with playlist:', this.playlist);
     this.audio = new Audio();
     this.audio.src = this.playlist[0].path;
     this.audio.volume = 0.2;
-    console.log('Setting initial audio source:', this.audio.src);
     this.audio.addEventListener('ended', () => this.playNext());
     this.audio.addEventListener('error', (e) => console.error('Audio error:', e));
 
@@ -79,7 +77,6 @@ export class MusicPlayerService {
   }
 
   togglePlay() {
-    console.log('Toggle play called, current state:', this.isPlaying);
     if (this.isPlaying) {
       this.audio.pause();
       this.isPlaying = false;
@@ -89,7 +86,6 @@ export class MusicPlayerService {
         this.isPlaying = true;
         this.isPlayingSubject.next(true);
       }).catch(error => {
-        console.error('Error playing audio:', error);
         this.isPlaying = false;
         this.isPlayingSubject.next(false);
       });
@@ -97,25 +93,21 @@ export class MusicPlayerService {
   }
 
   playNext() {
-    console.log('Playing next song');
     this.currentSongIndex = (this.currentSongIndex + 1) % this.playlist.length;
     this.loadAndPlayCurrentSong();
   }
 
   playPrevious() {
-    console.log('Playing previous song');
     this.currentSongIndex = (this.currentSongIndex - 1 + this.playlist.length) % this.playlist.length;
     this.loadAndPlayCurrentSong();
   }
 
   private loadAndPlayCurrentSong() {
     const song = this.playlist[this.currentSongIndex];
-    console.log('Loading song:', song);
     this.audio.src = song.path;
     this.currentSongSubject.next(song);
     if (this.isPlaying) {
       this.audio.play().catch(error => {
-        console.error('Error playing audio:', error);
         this.isPlaying = false;
         this.isPlayingSubject.next(false);
       });
