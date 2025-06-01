@@ -15,7 +15,6 @@ A modern, responsive personal portfolio website built with Angular 19 and Angula
 - [Components](#components)
 - [Services](#services)
 - [Styling](#styling)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Features
@@ -110,12 +109,5 @@ The project uses SCSS for styling with:
 - BEM methodology for CSS class naming
 - Mobile-first approach
 
-## Contributing
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the [MIT License](LICENSE.md)
