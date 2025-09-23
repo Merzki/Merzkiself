@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   selector: 'app-skillset',
   imports: [NgClass],
   templateUrl: './skillset.component.html',
-  styleUrl: './skillset.component.scss'
+  styleUrls: ['./skillset.component.scss'] 
 })
 export class SkillsetComponent {
   sections = [
@@ -16,7 +16,7 @@ export class SkillsetComponent {
       items: [
         { label: 'Markup', value: 'HTML, CSS, SCSS' },
         { label: 'Logic', value: 'JavaScript, TypeScript' },
-        { label: 'Framework', value: 'Angular' }
+        { label: 'Framework', value: 'Angular, jQuery' }
       ]
     },
     {
@@ -25,7 +25,7 @@ export class SkillsetComponent {
       description: 'Ensuring stable backend performance with well-thought-out API architecture',
       items: [
         { label: 'Language', value: 'PHP' },
-        { label: 'Framework', value: 'Express.js'}
+        { label: 'Framework', value: 'Express.js, Spring Framework' } 
       ]
     },
     {
@@ -40,14 +40,18 @@ export class SkillsetComponent {
       description: 'Containerizing, automating deployment, and managing clusters',
       items: [
         { label: 'Containerization', value: 'Docker, Kubernetes (kind)' },
-        { label: 'Platforms', value: 'Heroku, AWS, Nginx' }
+        { label: 'Platforms', value: 'Heroku, AWS, Nginx' },
+        { label: 'Security & IAM', value: 'Keycloak' }
       ]
     },
     {
       class: 'databases',
       title: 'Databases',
       description: 'Designing databases, optimizing queries, and working with SQL',
-      items: [{ label: 'RDBMS', value: 'MySQL, SQLite, Microsoft SQL Server' }]
+      items: [
+        { label: 'RDBMS', value: 'MySQL, SQLite, Microsoft SQL Server' },
+        { label: 'Object Storage', value: 'MinIO' } 
+      ]
     }
   ];
 }

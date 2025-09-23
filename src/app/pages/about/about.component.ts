@@ -28,7 +28,7 @@ export class AboutComponent implements OnInit, OnDestroy {
   slides = [
     {
       image: 'assets/imgs/me1.jpg',
-      text: "Hi, I'm Anton - an 18 y.o self-taught developer passionate about building smart, user-friendly apps. I'm currently studying to become a software developer in Poznań, Poland"
+      text: "Hi, I'm Anton - an 19 y.o self-taught developer passionate about building smart, user-friendly apps. I'm currently studying to become a software developer in Poznań, Poland"
     },
     {
       image: 'assets/imgs/me2.jpg',

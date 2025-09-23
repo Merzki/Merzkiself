@@ -288,13 +288,11 @@
 
     .social-grid {
         grid-template-areas:
-            "linkedin"
-            "telegram"
-            "github"
-            "email"
-            "paypal"
-            "dev";
-        grid-template-columns: 1fr;
+            "linkedin linkedin"
+            "telegram github"
+            "email email"
+            "paypal dev";
+        grid-template-columns: 1fr 1fr;
     }
 }
 

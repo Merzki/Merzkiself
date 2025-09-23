@@ -20,6 +20,16 @@ export class ProjectsComponent {
       description: `Personal portfolio built with Angular. Responsive design, themed support, component-based structure,
         and dynamic rendering through data-driven architecture. Showcases experience and dev approach.`,
       link: 'https://github.com/Merzki/Merzkiself'
+    },
+    {
+      title: 'MIOSM (Organization)',
+      description: `MIOSM is an organization building a prototype of a social network 
+        based on a microservice architecture. The project combines Angular on the frontend 
+        with Spring on the backend, supported by distributed storage for scalable data management. 
+        Its primary goal is to simulate a real-world development environment by creating a 
+        product-oriented system that addresses genuine user needs, serving both as a learning 
+        platform and as a practical implementation of modern software practices.`,
+      link: 'https://github.com/MIOSM'
     }
   ];
 }
