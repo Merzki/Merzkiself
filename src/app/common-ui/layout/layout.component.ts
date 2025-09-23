@@ -1,7 +1,8 @@
 import { Component, HostBinding } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet, NavigationEnd } from '@angular/router';
 import { SidebarComponent } from '../../components/sidebar/sidebar.component';
 import { FooterComponent } from '../../components/footer/footer.component';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-layout',
@@ -15,6 +16,16 @@ export class LayoutComponent {
 
   @HostBinding('class.open') get openClass() {
     return this.isSidebarOpen;
+  }
+
+  constructor(private router: Router) {
+    this.router.events
+      .pipe(filter((e): e is NavigationEnd => e instanceof NavigationEnd))
+      .subscribe(() => {
+        if (this.isSidebarOpen) {
+          this.isSidebarOpen = false;
+        }
+      });
   }
 
   toggleSidebar() {
