@@ -22,7 +22,6 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 1rem;
-    animation: fadeInUp 0.8s ease-out both;
 }
 
 .desc {
@@ -31,7 +30,6 @@
     opacity: 0.8;
     margin-bottom: 2rem;
     max-width: 600px;
-    animation: fadeInUp 0.8s ease-out both;
 }
 
 .social-grid {
@@ -46,7 +44,6 @@
     width: 100%;
     max-width: 1200px;
     margin-bottom: 2rem;
-    animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
 .social-card {
@@ -65,31 +62,11 @@
     cursor: pointer;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: var(--box-shadow);
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(45deg, rgba(255,255,255,0.05), rgba(255,255,255,0));
-        z-index: 1;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
+    box-sizing: border-box; 
 
     &:hover {
         transform: translateY(-3px);
         box-shadow: var(--box-shadow);
-        
-        &::before {
-            opacity: 1;
-        }
-
-        .social-icon {
-            transform: scale(1.05);
-        }
     }
 
     .social-icon {
@@ -98,7 +75,7 @@
         margin-bottom: 1rem;
         filter: brightness(0) invert(1);
         z-index: 2;
-        transition: all 0.3s ease;
+        display: block; 
     }
 
     .social-label {
@@ -106,7 +83,6 @@
         font-weight: bold;
         margin-bottom: 0.5rem;
         z-index: 2;
-        text-shadow: var(--text-shadow);
     }
 
     .social-value {
@@ -121,36 +97,13 @@
 
     &.size-vertical {
         min-height: 100%;
-        height: 100%;
+        height: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
-    &.email {
-        background: linear-gradient(135deg, var(--primary-color), var(--dark-primary-color));
-    }
-
-    &.telegram {
-        background: linear-gradient(135deg, var(--secondary-color), var(--dark-gray-color));
-    }
-
-    &.linkedin {
-        background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
-    }
-
-    &.dev {
-        background: linear-gradient(135deg, var(--dark-gray-color), var(--dark-color));
-    }
-
-    &.github {
-        background: linear-gradient(135deg, var(--dark-color), var(--dark-gray-color));
-    }
-
-    &.paypal {
-        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    }
 }
 
 .paypal-banner {
@@ -207,19 +160,6 @@
 }
 
 @media (max-width: 992px) {
-    .content-container {
-        width: 90%;
-        padding: 30px 20px;
-    }
-
-    .headline {
-        font-size: 4.7rem;
-    }
-
-    .desc {
-        font-size: clamp(1.1rem, 4vw, 1.4rem);
-    }
-
     .social-grid {
         grid-template-areas:
             "email email"
@@ -231,41 +171,17 @@
         gap: 1rem;
     }
 
-    .social-card {
-        padding: 1.5rem;
-        min-height: 160px;
-
-        &.size-large,
-        &.size-vertical {
-            min-height: 160px;
-            aspect-ratio: unset;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-        }
-
-        .social-label {
-            font-size: 1.1rem;
-        }
-
-        .social-value {
-            font-size: 0.8rem;
-        }
-    }
+    .social-card { padding: 1.25rem; min-height: 160px; }
+    .social-card .social-icon { width: 40px; height: 40px; }
+    .social-card .social-label { font-size: 1.1rem; }
+    .social-card .social-value { font-size: 0.8rem; }
+    .social-card.size-vertical { min-height: auto; height: auto; }
+    .social-card.size-large { min-height: 160px; }
 }
 
 @media (max-width: 768px) {
-    .content-container {
-        width: 95%;
-        padding: 20px 15px;
-    }
-
-    .headline {
-        font-size: 3.9rem;
-    }
-
+    .content-container { width: 95%; padding: 20px 15px; }
+    .headline { font-size: 3.6rem; }
     .social-grid {
         grid-template-areas:
             "linkedin linkedin"
@@ -273,27 +189,25 @@
             "email email"
             "paypal dev";
         grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 150px;
+        gap: 0.875rem;
     }
+
+    .social-card { padding: 1rem; min-height: 150px; }
+    .social-card.size-vertical, .social-card.size-large { min-height: 150px; }
 }
 
 @media (max-width: 480px) {
-    .content-container {
-        width: 100%;
-        padding: 15px 10px;
-    }
-
-    .headline {
-        font-size: 3.2rem;
-    }
-
-    .social-grid {
-        grid-template-areas:
-            "linkedin linkedin"
-            "telegram github"
-            "email email"
-            "paypal dev";
-        grid-template-columns: 1fr 1fr;
-    }
+    .content-container { width: 100%; padding: 16px 12px; }
+    .headline { font-size: 3rem; }
+    .social-grid { grid-auto-rows: 140px; gap: 0.75rem; }
+    .social-card { padding: 0.875rem; min-height: 140px; }
 }
 
+@media (max-width: 360px) {
+    .headline { font-size: 2.6rem; }
+    .desc { font-size: 1rem; }
+    .social-grid { grid-auto-rows: 130px; gap: 0.6rem; }
+    .social-card { padding: 0.75rem; min-height: 130px; }
+}
 

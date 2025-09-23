@@ -171,3 +171,119 @@ body {
   
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.volume-slider {
+  .mat-slider-track-fill {
+    background-color: var(--primary-color);
+  }
+
+  .mat-slider-thumb {
+    background-color: var(--primary-color);
+    width: clamp(0.625rem, 1.2vw, 0.875rem) !important;
+    height: clamp(0.625rem, 1.2vw, 0.875rem) !important;
+    border-radius: 50%;
+    transform: scale(1) !important;
+  }
+
+  .mat-slider-track-background {
+    background-color: var(--gray-color);
+    height: clamp(0.125rem, 0.2vw, 0.1875rem) !important;
+  }
+
+  .mat-slider-horizontal {
+    height: clamp(0.625rem, 1.2vw, 0.875rem) !important;
+    min-height: clamp(0.625rem, 1.2vw, 0.875rem) !important;
+  }
+
+  .mat-slider-track {
+    height: clamp(0.125rem, 0.2vw, 0.1875rem) !important;
+  }
+
+  .mat-slider-wrapper,
+  .mat-slider-track-wrapper {
+    height: clamp(0.625rem, 1.2vw, 0.875rem) !important;
+  }
+
+  .mat-slider-thumb-label {
+    width: clamp(0.625rem, 1.2vw, 0.875rem) !important;
+    height: clamp(0.625rem, 1.2vw, 0.875rem) !important;
+    transform: scale(1) !important;
+  }
+}
+
+.social-card.email { background: linear-gradient(135deg, var(--primary-color), var(--dark-primary-color)); }
+.social-card.telegram { background: linear-gradient(135deg, var(--secondary-color), var(--dark-gray-color)); }
+.social-card.linkedin { background: linear-gradient(135deg, var(--accent-color), var(--secondary-color)); }
+.social-card.dev { background: linear-gradient(135deg, var(--dark-gray-color), var(--dark-color)); }
+.social-card.github { background: linear-gradient(135deg, var(--dark-color), var(--dark-gray-color)); }
+.social-card.paypal { background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); }
+
+@media (max-width: 992px) {
+  .social-grid {
+    grid-template-areas:
+      "email email"
+      "telegram linkedin"
+      "dev github"
+      "paypal paypal";
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 160px;
+    gap: 1rem;
+  }
+  .social-card { padding: 1.5rem; min-height: 160px; }
+  .social-card .social-icon { width: 40px; height: 40px; }
+  .social-card .social-label { font-size: 1.1rem; }
+  .social-card .social-value { font-size: 0.8rem; }
+}
+
+@media (max-width: 768px) {
+  .content-container { width: 95%; padding: 20px 15px; }
+  .headline { font-size: 3.6rem; }
+  .social-grid {
+    grid-template-areas:
+      "linkedin linkedin"
+      "telegram github"
+      "email email"
+      "paypal dev";
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-container { width: 100%; padding: 16px 12px; }
+  .headline { font-size: 3rem; }
+}
+
+@media (max-width: 360px) {
+  .headline { font-size: 2.6rem; }
+  .desc { font-size: 1rem; }
+}
+
+@media (max-width: 360px) {
+  .title { font-size: 2.1rem !important; }
+  .subtitle { font-size: 0.95rem !important; }
+  .icon { width: 220px !important; }
+}
+
+@media (max-width: 480px) {
+  .about_text { font-size: 1rem !important; }
+}
+@media (max-width: 360px) {
+  .about_title { font-size: 2.6rem !important; }
+  .about_img { width: 55vw !important; }
+  .about_text { font-size: 0.95rem !important; line-height: 1.45 !important; }
+}
+
+@media (max-width: 480px) {
+  .it-title { font-size: 2.2rem !important; }
+  .it-subtitle { font-size: 1rem !important; }
+  .it-nav { font-size: 1rem !important; gap: 8px !important; }
+}
+@media (max-width: 360px) {
+  .it-title { font-size: 2rem !important; }
+  .it-subtitle { font-size: 0.95rem !important; }
+}
+
+@media (max-width: 480px) {
+  .music-player { min-width: auto !important; gap: 0.4rem !important; padding: 0.4rem 0.6rem !important; }
+  .player-controls button, .volume-control button { width: 2rem !important; height: 2rem !important; }
+}

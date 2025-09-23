@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-skillset',
+  standalone: true,
   imports: [NgClass],
   templateUrl: './skillset.component.html',
   styleUrls: ['./skillset.component.scss'] 

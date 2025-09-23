@@ -3,6 +3,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 
 @Component({
   selector: 'app-about',
+  standalone: true,
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
   animations: [
