@@ -18,14 +18,22 @@
   }
 }
 
+
 @media (max-width: 480px) {
+  .music-player {
+    min-width: auto !important;
+    gap: 0.4rem !important;
+    padding: 0.4rem 0.6rem 0.4rem 0.8rem !important;
+  }
+
   .player-controls {
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: auto auto auto;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
+    margin-right: 0.2rem;
   }
 
   .player-controls button {
@@ -33,6 +41,8 @@
     align-items: center;
     justify-content: center;
     padding: 0;
+    width: 2rem !important;
+    height: 2rem !important;
   }
 
   .player-controls button mat-icon {
@@ -41,8 +51,29 @@
   }
 
   .player-controls .mat-fab {
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+
+  .volume-control {
+    gap: 0.3rem !important;
+    margin-left: 0.4rem !important;
+    min-width: 4.2rem !important;
+    max-width: 5.5rem !important;
+    padding-right: 0.2rem;
+  }
+
+  .volume-control button {
+    width: 1.7rem !important;
+    height: 1.7rem !important;
+    min-width: 1.7rem !important;
+    min-height: 1.7rem !important;
+  }
+
+  .volume-control .volume-slider {
+    width: 2.5rem !important;
+    min-width: 2.2rem !important;
+    max-width: 3.2rem !important;
   }
 }
 
